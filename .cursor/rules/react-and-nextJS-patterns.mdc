@@ -1,0 +1,20 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Components:
+- Favor React Server Components where possible
+- Minimize client components
+- Add "use client" directive when using client-side hooks
+- Wrap client components in Suspense with fallbacks
+
+React 19 Features:
+- Use the "use" hook for context and promise resolution
+- Wrap server components that await promises in both Suspense and Error boundaries to provide fallback UI during loading states and graceful error handling.
+- Wrap client components that resolve promises received from server components via the "use" hook in both Suspense and Error boundaries to provide fallback UI during loading states and graceful error handling.
+- Avoid using memoization APIs such as useMemo, useCallback, and React.memo unless explicitly requested. The React compiler automatically manages memoization.
+
+NextJS Patterns:
+- Follow NextJS documentation for data fetching and rendering strategies
+- Use Server-Side Rendering when appropriate

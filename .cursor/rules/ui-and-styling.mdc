@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Component Library: Build with Shadcn
+Styling: Use TailwindCSS with mobile-first approach
+Icons: Use Lucide or Radix icons only
+Design: Create beautiful, production-quality designs

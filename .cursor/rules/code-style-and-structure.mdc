@@ -1,0 +1,18 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+TypeScript:
+- Prefer types over interfaces
+- Use "as const" instead of enums
+
+Naming:
+- Directories and files: kebab-case
+- Variables and functions: camelCase
+- Components: PascalCase with type prefixes (ButtonAccount, CardAnalyticsMain)
+
+Architecture:
+- Use functional programming patterns; avoid classes
+- If needed to convert some JS type into string, prefer template literals
+- Import the "server-only" package in files that are intended exclusively for server-side execution to prevent accidental client-side usage

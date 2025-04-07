@@ -1,0 +1,14 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Server Actions: Use next-safe-action library
+Validation: Use Zod for schema validation
+Authentication: Implement with Clerk
+Database: Use MongoDB directly (no ODM/ORM)
+URL State: Use nuqs for URL-based state management
+Data Fetching:
+- Prefer fetching in server components
+- Use SWR when client-side fetching is necessary
+Forms: Use React Hook Form for efficient form state management and validation with zod.

@@ -1,0 +1,9 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+Package Manager: Use pnpm (not npm)
+Framework: NextJS 15 (App Router only)
+Languages: Support English, Ukrainian, and Russian
+Git: Follow Conventional Commits format for commit messages
