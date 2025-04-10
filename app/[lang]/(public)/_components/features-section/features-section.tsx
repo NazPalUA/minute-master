@@ -1,39 +1,46 @@
-import { ROUTES } from '@/lib/constants/routes'
+import { ROUTES } from '@/lib/constants'
 import { Language } from '@/localization'
 import { getDictionary } from '@/localization/server'
 import {
-  BarChart2,
+  BarChart3,
   Clock,
-  FolderPlus,
-  GitBranch,
-  Settings,
-  Smartphone
+  FolderTree,
+  LayoutDashboard,
+  LineChart,
+  Settings2
 } from 'lucide-react'
 import { FeatureCard } from './feature-card'
 
 export async function FeaturesSection({ lang }: { lang: Language }) {
-  const dict = (await getDictionary(lang)).public
+  const { public: dict } = await getDictionary(lang)
+  const { items } = dict.home.features
 
-  const features = [
-    FolderPlus,
+  const featureIcons = [
+    LineChart,
+    FolderTree,
+    BarChart3,
     Clock,
-    BarChart2,
-    GitBranch,
-    Settings,
-    Smartphone
-  ].map((Icon, index) => ({
-    icon: Icon,
-    title: dict.home.features.items[index].title,
-    description: dict.home.features.items[index].description
+    Settings2,
+    LayoutDashboard
+  ]
+
+  const features = items.map((item, index) => ({
+    icon: featureIcons[index],
+    title: item.title,
+    description: item.description
   }))
 
   return (
-    <section id={ROUTES.HOME.FEATURES.ID} className="px-4 py-20">
-      <div className="container mx-auto">
-        <h2 className="mb-12 text-center text-3xl font-bold md:text-4xl">
+    <section
+      id={ROUTES.HOME.FEATURES.ID}
+      className="relative overflow-hidden px-4 py-24"
+    >
+      <div className="bg-grid-white/5 absolute inset-0 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))]" />
+      <div className="relative container mx-auto">
+        <h2 className="mb-16 text-center text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
           {dict.home.features.title}
         </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map(({ icon, title, description }) => (
             <FeatureCard
               key={title}

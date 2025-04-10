@@ -49,28 +49,28 @@
       "title": "Key Features",
       "items": [
         {
-          "title": "Intuitive Project Organization",
-          "description": "Easily manage and organize your projects with our user-friendly interface."
+          "title": "Real-Time Analytics",
+          "description": "Instantly view up-to-date insights from your time tracking, so you always know where your efforts are going."
         },
         {
-          "title": "Real-time Time Tracking",
-          "description": "Track time spent on tasks with precision, ensuring accurate productivity insights."
+          "title": "Multi-Level Organization",
+          "description": "Structure your work effortlessly using Projects, Sections, and Tasks for maximum clarity and control."
         },
         {
-          "title": "Detailed Analytics",
-          "description": "Gain valuable insights with comprehensive project performance analytics."
+          "title": "Comprehensive Reporting & Visualizations",
+          "description": "Access detailed reports and intuitive charts that help you understand your productivity at a glance."
         },
         {
-          "title": "Task Dependencies",
-          "description": "Set up and visualize task dependencies to manage complex project workflows."
+          "title": "Unlimited Time Log Entries",
+          "description": "Capture every work session without restrictions, ensuring that all your logged time is always available for review."
         },
         {
-          "title": "Customizable Workflows",
-          "description": "Tailor the platform to fit your unique project management needs."
+          "title": "Automated Data Aggregation",
+          "description": "Benefit from real-time, on-the-fly aggregation of your time logs so analytics remain fresh and accurate."
         },
         {
-          "title": "Mobile Accessibility",
-          "description": "Access your projects on-the-go with our responsive mobile app."
+          "title": "Intuitive Dashboard",
+          "description": "Get a comprehensive, easy-to-navigate overview of all your projects, sections, tasks, and time logs in one streamlined dashboard."
         }
       ]
     },
@@ -79,61 +79,44 @@
       "title": "How It Works",
       "steps": [
         {
-          "title": "Create a Project",
-          "description": "Set up your project with ease, defining goals and timelines."
+          "title": "Create & Organize",
+          "description": "Set up your workspace by creating projects. Within each project, organize your work into sections and, if needed, further break them down into tasks."
         },
         {
-          "title": "Add Tasks",
-          "description": "Break down your project into manageable tasks and set priorities."
+          "title": "Log Your Time",
+          "description": "Easily start and stop timers as you work. Every session is automatically recorded and linked to the appropriate project, section, or task."
         },
         {
-          "title": "Track Progress",
-          "description": "Monitor task completion and overall project progress in real-time."
+          "title": "Real-Time Aggregation",
+          "description": "Instantly see your accumulated work time through dynamically updated analytics. All your logged sessions are aggregated on the fly to give you a clear picture of your productivity."
         },
         {
-          "title": "Analyze & Improve",
-          "description": "Use built-in analytics to identify bottlenecks and optimize your workflow."
+          "title": "Insightful Reporting",
+          "description": "View detailed reports and intuitive visualizations that help you identify trends, optimize your workflow, and make informed decisions about how you spend your time."
         }
       ]
     },
 
     "pricing": {
-      "title": "Pricing Plans",
-      "plans": {
-        "basic": {
-          "name": "Basic",
-          "features": [
-            "5 Active Projects",
-            "Unlimited Tasks",
-            "Basic Analytics",
-            "Email Support"
-          ]
-        },
-        "pro": {
-          "name": "Pro",
-          "features": [
-            "Unlimited Projects",
-            "Advanced Analytics",
-            "Priority Support",
-            "Custom Dashboards",
-            "API Access"
-          ]
-        },
-        "enterprise": {
-          "name": "Enterprise",
-          "features": [
-            "All Pro Features",
-            "Dedicated Account Manager",
-            "Custom Integrations",
-            "On-premise Installation",
-            "Advanced Security Features"
-          ]
-        }
-      },
-      "chooseMonthly": "Choose Monthly",
-      "chooseYearly": "Choose Yearly",
+      "badge": "Limited Time Offer",
+      "title": "Boost Your Productivity Today",
+      "subtitle": "Transform your workflow with powerful time tracking that helps you work smarter, not harder.",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
       "month": "month",
-      "year": "year"
+      "save": "Save",
+      "billedAnnually": "Billed annually ({total}) — Save {savings}",
+      "dayFreeTrial": "{days}-days free trial",
+      "features": [
+        "Real-Time Analytics",
+        "Multi-Level Organization",
+        "Comprehensive Reporting & Visualizations",
+        "Unlimited Time Log Entries",
+        "Automated Data Aggregation",
+        "Full-Feature Access"
+      ],
+      "startFreeTrial": "Start Your Free Trial",
+      "noCommitment": "No commitment. Cancel anytime during your trial."
     }
   }
 }

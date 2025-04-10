@@ -1,6 +1,5 @@
 import { Language } from '@/localization'
-import { Footer } from './_components/footer'
-import { Header } from './_components/header'
+import { Footer, Header } from './_components'
 
 export default async function RootLayout({
   children,

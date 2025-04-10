@@ -1,4 +1,7 @@
 export { FeaturesSection } from './features-section'
+export { Footer } from './footer'
+export { Header } from './header'
 export { HeroSection } from './hero-section'
 export { HowItWorksSection } from './how-it-works-section'
+export { MobileNavSheet } from './mobile-nav-sheet'
 export { PricingSection } from './pricing-section'
