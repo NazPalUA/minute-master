@@ -1,0 +1,73 @@
+{
+  "entity": {
+    "singular": "Project",
+    "plural": "Projects"
+  },
+
+  "emptyState": {
+    "noProjects": "No projects found",
+    "description": "Create your first project or change the filters"
+  },
+
+  "fields": {
+    "name": {
+      "label": "Project Name",
+      "placeholder": "Enter Project Name"
+    },
+    "description": {
+      "label": "Project Description",
+      "placeholder": "Enter Project Description"
+    },
+    "estimatedTime": {
+      "label": "Estimated Time",
+      "placeholder": "Enter Estimated Time"
+    }
+  },
+
+  "actions": {
+    "create": {
+      "trigger": "Create Project",
+      "title": "Create Project",
+      "description": "Fill in the details to create a new project.",
+      "success": "Project created successfully",
+      "failure": "Project creation failed",
+
+      "defaultSection": {
+        "name": "General",
+        "description": "Default section for the project. You can add more sections if needed."
+      }
+    },
+    "update": {
+      "trigger": "Edit Project",
+      "title": "Edit Project",
+      "description": "Fill in the details to update the project.",
+      "success": "Project updated successfully",
+      "failure": "Project update failed"
+    }
+  },
+
+  "cards": {
+    "totalTasks": "Total Tasks",
+    "timeSpent": "Time Spent",
+    "daysRemaining": "Days Remaining",
+    "comparisons": {
+      "completed": "completed",
+      "ofEstimated": "of estimated time",
+      "dueOn": "Due on"
+    }
+  },
+
+  "analytics": {
+    "timeDistribution": {
+      "title": "Time Distribution",
+      "description": "The distribution of time spent in each section of the project."
+    },
+    "progress": {
+      "title": "Project Progress",
+      "projectTimeline": "Project Timelines",
+      "timeTracking": "Time Tracking",
+      "actual": "Actual",
+      "estimated": "Estimated"
+    }
+  }
+}

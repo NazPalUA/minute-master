@@ -1,0 +1,188 @@
+{
+  "weekDays": {
+    "monday": {
+      "full": "Понедельник",
+      "short": "Пн"
+    },
+    "tuesday": {
+      "full": "Вторник",
+      "short": "Вт"
+    },
+    "wednesday": {
+      "full": "Среда",
+      "short": "Ср"
+    },
+    "thursday": {
+      "full": "Четверг",
+      "short": "Чт"
+    },
+    "friday": {
+      "full": "Пятница",
+      "short": "Пт"
+    },
+    "saturday": {
+      "full": "Суббота",
+      "short": "Сб"
+    },
+    "sunday": {
+      "full": "Воскресенье",
+      "short": "Вс"
+    }
+  },
+
+  "months": {
+    "january": {
+      "full": "Январь",
+      "short": "Янв"
+    },
+    "february": {
+      "full": "Февраль",
+      "short": "Фев"
+    },
+    "march": {
+      "full": "Март",
+      "short": "Мар"
+    },
+    "april": {
+      "full": "Апрель",
+      "short": "Апр"
+    },
+    "may": {
+      "full": "Май",
+      "short": "Май"
+    },
+    "june": {
+      "full": "Июнь",
+      "short": "Июн"
+    },
+    "july": {
+      "full": "Июль",
+      "short": "Июл"
+    },
+    "august": {
+      "full": "Август",
+      "short": "Авг"
+    },
+    "september": {
+      "full": "Сентябрь",
+      "short": "Сен"
+    },
+    "october": {
+      "full": "Октябрь",
+      "short": "Окт"
+    },
+    "november": {
+      "full": "Ноябрь",
+      "short": "Ноя"
+    },
+    "december": {
+      "full": "Декабрь",
+      "short": "Дек"
+    }
+  },
+
+  "units": {
+    "year": {
+      "singular": "Год",
+      "plural": "Годы",
+      "short": "Г",
+      "shortPlural": "Гг",
+      "symbol": "г"
+    },
+    "month": {
+      "singular": "Месяц",
+      "plural": "Месяцы",
+      "short": "Мес",
+      "shortPlural": "Мес",
+      "symbol": "м"
+    },
+    "week": {
+      "singular": "Неделя",
+      "plural": "Недели",
+      "short": "Нед",
+      "shortPlural": "Нед",
+      "symbol": "н"
+    },
+    "day": {
+      "singular": "День",
+      "plural": "Дни",
+      "short": "Д",
+      "shortPlural": "Д",
+      "symbol": "д"
+    },
+    "hour": {
+      "singular": "Час",
+      "plural": "Часы",
+      "short": "Ч",
+      "shortPlural": "Ч",
+      "symbol": "ч"
+    },
+    "minute": {
+      "singular": "Минута",
+      "plural": "Минуты",
+      "short": "Мин",
+      "shortPlural": "Мин",
+      "symbol": "м"
+    },
+    "second": {
+      "singular": "Секунда",
+      "plural": "Секунды",
+      "short": "Сек",
+      "shortPlural": "Сек",
+      "symbol": "с"
+    }
+  },
+
+  "periods": {
+    "day": "День",
+    "24h": "24 часа",
+    "today": "Сегодня",
+    "yesterday": "Вчера",
+
+    "week": "Неделя",
+    "7d": "7 дней",
+    "thisWeek": "Эта неделя",
+    "lastWeek": "Прошлая неделя",
+
+    "month": "Месяц",
+    "30d": "30 дней",
+    "thisMonth": "Этот месяц",
+    "lastMonth": "Прошлый месяц",
+
+    "year": "Год",
+    "365d": "365 дней",
+    "thisYear": "Этот год",
+    "lastYear": "Прошлый год",
+
+    "allTime": "Всё время"
+  },
+
+  "metrics": {
+    "timeSpent": "Затраченное время",
+    "timeRemaining": "Оставшееся время",
+    "timeDifference": "Разница во времени",
+    "timeDistribution": "Распределение времени",
+    "timeTracking": "Отслеживание времени"
+  },
+
+  "comparisons": {
+    "fromLastMonth": "С прошлого месяца",
+    "fromLastWeek": "С прошлой недели",
+    "thisWeek": "На этой неделе"
+  },
+
+  "common": {
+    "dueDate": "Срок выполнения",
+    "startDate": "Дата начала",
+    "endDate": "Дата окончания",
+    "noDate": "Без даты",
+    "noTime": "Без времени",
+    "date": "Дата",
+    "time": "Время",
+    "duration": "Продолжительность",
+    "startTime": "Время начала",
+    "endTime": "Время окончания",
+    "start": "Начало",
+    "end": "Конец"
+  }
+}

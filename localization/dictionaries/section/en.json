@@ -1,0 +1,35 @@
+{
+  "entity": {
+    "singular": "Section",
+    "plural": "Sections"
+  },
+
+  "fields": {
+    "name": {
+      "label": "Section Name",
+      "placeholder": "Enter Section Name"
+    },
+
+    "description": {
+      "label": "Section Description",
+      "placeholder": "Enter Section Description"
+    }
+  },
+
+  "actions": {
+    "create": {
+      "trigger": "Add Section",
+      "title": "Create Section",
+      "description": "Fill in the details to create a new section.",
+      "success": "Section created successfully",
+      "failure": "Section creation failed"
+    },
+
+    "update": {
+      "title": "Update Section",
+      "description": "Fill in the details to update the section.",
+      "success": "Section updated successfully",
+      "failure": "Section update failed"
+    }
+  }
+}

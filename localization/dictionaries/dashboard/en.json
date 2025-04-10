@@ -1,0 +1,47 @@
+{
+  "title": "Dashboard",
+
+  "cards": {
+    "totalHoursThisMonth": "Total Hours This Month",
+    "avgDailyHours": "Avg. Daily Hours",
+    "avgTaskDuration": "Avg. Task Duration",
+    "completedTasks": "Completed Tasks"
+  },
+
+  "navigation": {
+    "dashboard": "Dashboard",
+    "projects": "Projects",
+    "tasks": "Tasks",
+    "timer": "Timer",
+    "settings": "Settings"
+  },
+
+  "timer": {
+    "label": "Timer",
+    "description": "Select a project, section and task (optional) to start tracking time",
+
+    "actions": {
+      "open": "Open Timer",
+      "close": "Close Timer",
+
+      "start": {
+        "trigger": "Start Timer",
+        "success": "Timer started successfully",
+        "failure": {
+          "notSelected": "Please select a project and section",
+          "general": "Timer start failed",
+          "alreadyRunning": "Timer already running"
+        }
+      },
+
+      "stop": {
+        "trigger": "Stop Timer",
+        "success": "Timer stopped successfully",
+        "failure": {
+          "notRunning": "Timer not running",
+          "general": "Timer stop failed"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "entity": {
+    "singular": "Task",
+    "plural": "Tasks"
+  },
+
+  "metrics": {
+    "total": "Total Tasks",
+    "completed": "Completed Tasks",
+    "inProgress": "In Progress Tasks",
+    "notStarted": "Not Started Tasks",
+    "onHold": "On Hold Tasks"
+  },
+
+  "emptyState": {
+    "title": "No tasks found",
+    "description": "Create your first task or change the filters"
+  },
+
+  "fields": {
+    "name": {
+      "label": "Task Name",
+      "placeholder": "Enter Task Name"
+    },
+    "description": {
+      "label": "Description",
+      "placeholder": "Enter Description"
+    },
+    "status": {
+      "label": "Status",
+      "placeholder": "Select Status"
+    },
+    "section": {
+      "label": "Section",
+      "placeholder": "Select Section"
+    },
+    "dueDate": {
+      "label": "Due Date",
+      "placeholder": "Select Due Date"
+    },
+    "project": {
+      "label": "Project",
+      "placeholder": "Select Project"
+    }
+  },
+
+  "actions": {
+    "create": {
+      "trigger": "Create Task",
+      "title": "Create Task",
+      "description": "Fill in the details to create a new task.",
+      "success": "Task created successfully",
+      "failure": "Task creation failed"
+    },
+    "update": {
+      "trigger": "Update Task",
+      "title": "Update Task",
+      "description": "Fill in the details to update the task.",
+      "success": "Task updated successfully",
+      "failure": "Task update failed"
+    },
+    "delete": {
+      "trigger": "Delete Task",
+      "title": "Delete Task",
+      "description": "Are you sure you want to delete this task?",
+      "success": "Task deleted successfully",
+      "failure": "Task deletion failed"
+    }
+  }
+}

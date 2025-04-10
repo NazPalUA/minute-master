@@ -1,0 +1,54 @@
+{
+  "entity": {
+    "singular": "Time Log",
+    "plural": "Time Logs"
+  },
+
+  "emptyState": {
+    "title": "No time logs found",
+    "description": "Create your first time log or change the filters"
+  },
+
+  "fields": {
+    "startDate": {
+      "label": "Start Time",
+      "placeholder": "Select start date and time"
+    },
+    "endDate": {
+      "label": "End Time",
+      "placeholder": "Select end date and time"
+    },
+    "task": {
+      "label": "Task",
+      "placeholder": "Select a task"
+    },
+    "section": {
+      "label": "Section",
+      "placeholder": "Select a section"
+    }
+  },
+
+  "actions": {
+    "create": {
+      "trigger": "Add Time Log",
+      "title": "Create Time Log",
+      "description": "Fill in the details to create a new time log.",
+      "success": "Time log created successfully",
+      "failure": "Failed to create time log"
+    },
+    "update": {
+      "trigger": "Edit Time Log",
+      "title": "Edit Time Log",
+      "description": "Update the details of this time log.",
+      "success": "Time log updated successfully",
+      "failure": "Failed to update time log"
+    },
+    "delete": {
+      "trigger": "Delete",
+      "title": "Delete Time Log",
+      "description": "Are you sure you want to delete this time log?",
+      "success": "Time log deleted successfully",
+      "failure": "Failed to delete time log"
+    }
+  }
+}

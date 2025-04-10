@@ -1,0 +1,188 @@
+{
+  "weekDays": {
+    "monday": {
+      "full": "Monday",
+      "short": "Mon"
+    },
+    "tuesday": {
+      "full": "Tuesday",
+      "short": "Tue"
+    },
+    "wednesday": {
+      "full": "Wednesday",
+      "short": "Wed"
+    },
+    "thursday": {
+      "full": "Thursday",
+      "short": "Thu"
+    },
+    "friday": {
+      "full": "Friday",
+      "short": "Fri"
+    },
+    "saturday": {
+      "full": "Saturday",
+      "short": "Sat"
+    },
+    "sunday": {
+      "full": "Sunday",
+      "short": "Sun"
+    }
+  },
+
+  "months": {
+    "january": {
+      "full": "January",
+      "short": "Jan"
+    },
+    "february": {
+      "full": "February",
+      "short": "Feb"
+    },
+    "march": {
+      "full": "March",
+      "short": "Mar"
+    },
+    "april": {
+      "full": "April",
+      "short": "Apr"
+    },
+    "may": {
+      "full": "May",
+      "short": "May"
+    },
+    "june": {
+      "full": "June",
+      "short": "Jun"
+    },
+    "july": {
+      "full": "July",
+      "short": "Jul"
+    },
+    "august": {
+      "full": "August",
+      "short": "Aug"
+    },
+    "september": {
+      "full": "September",
+      "short": "Sep"
+    },
+    "october": {
+      "full": "October",
+      "short": "Oct"
+    },
+    "november": {
+      "full": "November",
+      "short": "Nov"
+    },
+    "december": {
+      "full": "December",
+      "short": "Dec"
+    }
+  },
+
+  "units": {
+    "year": {
+      "singular": "Year",
+      "plural": "Years",
+      "short": "Yr",
+      "shortPlural": "Yrs",
+      "symbol": "y"
+    },
+    "month": {
+      "singular": "Month",
+      "plural": "Months",
+      "short": "Mo",
+      "shortPlural": "Mos",
+      "symbol": "m"
+    },
+    "week": {
+      "singular": "Week",
+      "plural": "Weeks",
+      "short": "Wk",
+      "shortPlural": "Wks",
+      "symbol": "w"
+    },
+    "day": {
+      "singular": "Day",
+      "plural": "Days",
+      "short": "D",
+      "shortPlural": "D",
+      "symbol": "d"
+    },
+    "hour": {
+      "singular": "Hour",
+      "plural": "Hours",
+      "short": "Hr",
+      "shortPlural": "Hrs",
+      "symbol": "h"
+    },
+    "minute": {
+      "singular": "Minute",
+      "plural": "Minutes",
+      "short": "Min",
+      "shortPlural": "Mins",
+      "symbol": "m"
+    },
+    "second": {
+      "singular": "Second",
+      "plural": "Seconds",
+      "short": "Sec",
+      "shortPlural": "Secs",
+      "symbol": "s"
+    }
+  },
+
+  "periods": {
+    "day": "Day",
+    "24h": "24 Hours",
+    "today": "Today",
+    "yesterday": "Yesterday",
+
+    "week": "Week",
+    "7d": "7 Days",
+    "thisWeek": "This Week",
+    "lastWeek": "Last Week",
+
+    "month": "Month",
+    "30d": "30 Days",
+    "thisMonth": "This Month",
+    "lastMonth": "Last Month",
+
+    "year": "Year",
+    "365d": "365 Days",
+    "thisYear": "This Year",
+    "lastYear": "Last Year",
+
+    "allTime": "All Time"
+  },
+
+  "metrics": {
+    "timeSpent": "Time Spent",
+    "timeRemaining": "Time Remaining",
+    "timeDifference": "Time Difference",
+    "timeDistribution": "Time Distribution",
+    "timeTracking": "Time Tracking"
+  },
+
+  "comparisons": {
+    "fromLastMonth": "From Last Month",
+    "fromLastWeek": "From Last Week",
+    "thisWeek": "This Week"
+  },
+
+  "common": {
+    "dueDate": "Due Date",
+    "startDate": "Start Date",
+    "endDate": "End Date",
+    "noDate": "No Date",
+    "noTime": "No Time",
+    "date": "Date",
+    "time": "Time",
+    "duration": "Duration",
+    "startTime": "Start Time",
+    "endTime": "End Time",
+    "start": "Start",
+    "end": "End"
+  }
+}

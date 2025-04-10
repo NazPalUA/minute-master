@@ -1,0 +1,188 @@
+{
+  "weekDays": {
+    "monday": {
+      "full": "Понеділок",
+      "short": "Пн"
+    },
+    "tuesday": {
+      "full": "Вівторок",
+      "short": "Вт"
+    },
+    "wednesday": {
+      "full": "Середа",
+      "short": "Ср"
+    },
+    "thursday": {
+      "full": "Четвер",
+      "short": "Чт"
+    },
+    "friday": {
+      "full": "П'ятниця",
+      "short": "Пт"
+    },
+    "saturday": {
+      "full": "Субота",
+      "short": "Сб"
+    },
+    "sunday": {
+      "full": "Неділя",
+      "short": "Нд"
+    }
+  },
+
+  "months": {
+    "january": {
+      "full": "Січень",
+      "short": "Січ"
+    },
+    "february": {
+      "full": "Лютий",
+      "short": "Лют"
+    },
+    "march": {
+      "full": "Березень",
+      "short": "Бер"
+    },
+    "april": {
+      "full": "Квітень",
+      "short": "Кві"
+    },
+    "may": {
+      "full": "Травень",
+      "short": "Тра"
+    },
+    "june": {
+      "full": "Червень",
+      "short": "Чер"
+    },
+    "july": {
+      "full": "Липень",
+      "short": "Лип"
+    },
+    "august": {
+      "full": "Серпень",
+      "short": "Сер"
+    },
+    "september": {
+      "full": "Вересень",
+      "short": "Вер"
+    },
+    "october": {
+      "full": "Жовтень",
+      "short": "Жов"
+    },
+    "november": {
+      "full": "Листопад",
+      "short": "Лис"
+    },
+    "december": {
+      "full": "Грудень",
+      "short": "Гру"
+    }
+  },
+
+  "units": {
+    "year": {
+      "singular": "Рік",
+      "plural": "Роки",
+      "short": "Р",
+      "shortPlural": "Рр",
+      "symbol": "р"
+    },
+    "month": {
+      "singular": "Місяць",
+      "plural": "Місяці",
+      "short": "Міс",
+      "shortPlural": "Міс",
+      "symbol": "м"
+    },
+    "week": {
+      "singular": "Тиждень",
+      "plural": "Тижні",
+      "short": "Тиж",
+      "shortPlural": "Тиж",
+      "symbol": "т"
+    },
+    "day": {
+      "singular": "День",
+      "plural": "Дні",
+      "short": "Д",
+      "shortPlural": "Д",
+      "symbol": "д"
+    },
+    "hour": {
+      "singular": "Година",
+      "plural": "Години",
+      "short": "Год",
+      "shortPlural": "Год",
+      "symbol": "г"
+    },
+    "minute": {
+      "singular": "Хвилина",
+      "plural": "Хвилини",
+      "short": "Хв",
+      "shortPlural": "Хв",
+      "symbol": "х"
+    },
+    "second": {
+      "singular": "Секунда",
+      "plural": "Секунди",
+      "short": "Сек",
+      "shortPlural": "Сек",
+      "symbol": "с"
+    }
+  },
+
+  "periods": {
+    "day": "День",
+    "24h": "24 години",
+    "today": "Сьогодні",
+    "yesterday": "Вчора",
+
+    "week": "Тиждень",
+    "7d": "7 днів",
+    "thisWeek": "Цей тиждень",
+    "lastWeek": "Минулий тиждень",
+
+    "month": "Місяць",
+    "30d": "30 днів",
+    "thisMonth": "Цей місяць",
+    "lastMonth": "Минулий місяць",
+
+    "year": "Рік",
+    "365d": "365 днів",
+    "thisYear": "Цей рік",
+    "lastYear": "Минулий рік",
+
+    "allTime": "Весь час"
+  },
+
+  "metrics": {
+    "timeSpent": "Витрачений час",
+    "timeRemaining": "Залишилося часу",
+    "timeDifference": "Різниця в часі",
+    "timeDistribution": "Розподіл часу",
+    "timeTracking": "Відстеження часу"
+  },
+
+  "comparisons": {
+    "fromLastMonth": "Від минулого місяця",
+    "fromLastWeek": "Від минулого тижня",
+    "thisWeek": "Цього тижня"
+  },
+
+  "common": {
+    "dueDate": "Термін виконання",
+    "startDate": "Дата початку",
+    "endDate": "Дата завершення",
+    "noDate": "Без дати",
+    "noTime": "Без часу",
+    "date": "Дата",
+    "time": "Час",
+    "duration": "Тривалість",
+    "startTime": "Час початку",
+    "endTime": "Час завершення",
+    "start": "Початок",
+    "end": "Кінець"
+  }
+}

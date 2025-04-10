@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "title": "Flexible Time Tracking for Freelancers, Solopreneurs, Students, and Beyond",
+    "description": "It is a robust time tracking application that helps you organize your work into projects and sections, monitor tasks with statuses, and analyze productivity. Perfect for individuals looking to manage their time and projects more effectively."
+  },
+
+  "layout": {
+    "language": "Language",
+    "theme": "Theme",
+    "toggleTheme": "Toggle theme",
+    "changeLanguage": "Change language",
+
+    "header": {
+      "features": "Features",
+      "pricing": "Pricing",
+      "dashboard": "Dashboard",
+      "login": "Log in",
+      "menu": "Menu"
+    },
+
+    "footer": {
+      "description": "Your all-in-one solution for efficient project and task management. Streamline your workflow, track time effortlessly, and boost your productivity.",
+
+      "quickLinks": "Quick Links",
+      "features": "Features",
+      "pricing": "Pricing",
+      "dashboard": "Dashboard",
+      "contact": "Contact",
+
+      "legal": "Legal",
+      "termsOfService": "Terms of Service",
+      "privacyPolicy": "Privacy Policy",
+
+      "support": "Support",
+      "helpCenter": "Help Center",
+      "contactSupport": "Contact Support",
+
+      "copyright": "All rights reserved."
+    }
+  },
+
+  "home": {
+    "hero": {
+      "welcomeTo": "Welcome to",
+      "subtitle": "Your all-in-one solution for efficient project and task management. Streamline your workflow, track time effortlessly, and boost your productivity.",
+      "tryForFree": "Try for Free",
+      "watchDemo": "Watch Demo"
+    },
+
+    "features": {
+      "title": "Key Features",
+      "items": [
+        {
+          "title": "Intuitive Project Organization",
+          "description": "Easily manage and organize your projects with our user-friendly interface."
+        },
+        {
+          "title": "Real-time Time Tracking",
+          "description": "Track time spent on tasks with precision, ensuring accurate productivity insights."
+        },
+        {
+          "title": "Detailed Analytics",
+          "description": "Gain valuable insights with comprehensive project performance analytics."
+        },
+        {
+          "title": "Task Dependencies",
+          "description": "Set up and visualize task dependencies to manage complex project workflows."
+        },
+        {
+          "title": "Customizable Workflows",
+          "description": "Tailor the platform to fit your unique project management needs."
+        },
+        {
+          "title": "Mobile Accessibility",
+          "description": "Access your projects on-the-go with our responsive mobile app."
+        }
+      ]
+    },
+
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        {
+          "title": "Create a Project",
+          "description": "Set up your project with ease, defining goals and timelines."
+        },
+        {
+          "title": "Add Tasks",
+          "description": "Break down your project into manageable tasks and set priorities."
+        },
+        {
+          "title": "Track Progress",
+          "description": "Monitor task completion and overall project progress in real-time."
+        },
+        {
+          "title": "Analyze & Improve",
+          "description": "Use built-in analytics to identify bottlenecks and optimize your workflow."
+        }
+      ]
+    },
+
+    "pricing": {
+      "title": "Pricing Plans",
+      "plans": [
+        {
+          "name": "Basic",
+          "features": [
+            "5 Active Projects",
+            "Unlimited Tasks",
+            "Basic Analytics",
+            "Email Support"
+          ]
+        },
+        {
+          "name": "Pro",
+          "features": [
+            "Unlimited Projects",
+            "Advanced Analytics",
+            "Priority Support",
+            "Custom Dashboards",
+            "API Access"
+          ]
+        },
+        {
+          "name": "Enterprise",
+          "features": [
+            "All Pro Features",
+            "Dedicated Account Manager",
+            "Custom Integrations",
+            "On-premise Installation",
+            "Advanced Security Features"
+          ]
+        }
+      ],
+      "chooseMonthly": "Choose Monthly",
+      "chooseYearly": "Choose Yearly",
+      "month": "month",
+      "year": "year"
+    }
+  }
+}
