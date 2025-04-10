@@ -19,7 +19,11 @@ export function PricingCard({
   yearlyPrice,
   monthlyPrice
 }: Props) {
-  const { public: dict } = useDictionary()
+  const {
+    public: {
+      home: { pricing: dict }
+    }
+  } = useDictionary()
 
   return (
     <Card className="relative overflow-hidden border-none bg-transparent shadow-none">
@@ -33,13 +37,13 @@ export function PricingCard({
                 : yearlyPricePerMonth.toFixed(0)}
             </span>
             <span className="text-muted-foreground ml-2 text-xl">
-              /{dict.home.pricing.month}
+              /{dict.month}
             </span>
           </div>
 
           {billingCycle === 'yearly' && (
             <div className="mt-2 font-medium text-green-600 dark:text-green-400">
-              {dict.home.pricing.billedAnnually
+              {dict.billedAnnually
                 .replace('{total}', `$${yearlyPrice.toFixed(0)}`)
                 .replace('{savings}', `$${savingsAmount.toFixed(0)}`)}
             </div>
@@ -48,13 +52,13 @@ export function PricingCard({
           <div className="mt-4 flex items-center justify-center gap-2">
             <Clock className="text-primary h-4 w-4" />
             <span className="text-sm">
-              {dict.home.pricing.dayFreeTrial.replace('{days}', '14')}
+              {dict.dayFreeTrial.replace('{days}', '14')}
             </span>
           </div>
         </div>
 
         <div className="mx-auto mb-8 grid max-w-2xl grid-cols-1 gap-4 md:grid-cols-2">
-          {dict.home.pricing.features.map((feature, index) => (
+          {dict.features.map((feature, index) => (
             <div key={index} className="flex items-center">
               <div className="mr-3 flex-shrink-0">
                 <div className="bg-primary/10 flex h-6 w-6 items-center justify-center rounded-full">
@@ -78,7 +82,7 @@ export function PricingCard({
 
               <div className="relative flex items-center justify-center">
                 <span className="text-primary-foreground text-lg font-medium">
-                  {dict.home.pricing.startFreeTrial}
+                  {dict.startFreeTrial}
                 </span>
                 <ArrowRight className="text-primary-foreground ml-2 h-5 w-5 transition-all duration-300 group-hover:translate-x-1 group-hover:scale-110" />
               </div>
@@ -102,7 +106,7 @@ export function PricingCard({
           </button>
 
           <p className="text-muted-foreground mt-2 text-center text-xs">
-            {dict.home.pricing.noCommitment}
+            {dict.noCommitment}
           </p>
         </div>
       </CardContent>

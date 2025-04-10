@@ -1,9 +1,9 @@
 import { Language } from '@/localization'
 import {
-  FeaturesSection,
-  HeroSection,
-  HowItWorksSection,
-  PricingSection
+  SectionFeatures,
+  SectionHero,
+  SectionHowItWorks,
+  SectionPricing
 } from './_components'
 
 type Params = Promise<{ lang: Language }>
@@ -13,10 +13,10 @@ export default async function Home(props: { params: Params }) {
 
   return (
     <div className="flex flex-col gap-12">
-      <HeroSection lang={lang} />
-      <FeaturesSection lang={lang} />
-      <HowItWorksSection lang={lang} />
-      <PricingSection lang={lang} />
+      <SectionHero lang={lang} />
+      <SectionFeatures lang={lang} />
+      <SectionHowItWorks lang={lang} />
+      <SectionPricing lang={lang} />
     </div>
   )
 }

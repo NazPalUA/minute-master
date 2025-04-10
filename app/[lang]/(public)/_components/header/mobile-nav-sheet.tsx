@@ -17,14 +17,24 @@ import Link from 'next/link'
 import { Auth } from './auth'
 
 export const MobileNavSheet = async ({ lang }: { lang: Language }) => {
-  const { public: dict, common: commonDict } = await getDictionary(lang)
+  const {
+    public: {
+      layout: { header: headerDict }
+    },
+    common: { actions: actionsDict }
+  } = await getDictionary(lang)
+
+  const navItems = [
+    { href: ROUTES.HOME.FEATURES.SECTION(lang), label: headerDict.features },
+    { href: ROUTES.HOME.PRICING.SECTION(lang), label: headerDict.pricing },
+    { href: ROUTES.DASHBOARD.INDEX(lang), label: headerDict.dashboard }
+  ]
+
   return (
     <Sheet>
       <SheetTrigger className="md:hidden">
-        <>
-          <Menu className="h-10 w-10" />
-          <span className="sr-only">{dict.layout.header.menu}</span>
-        </>
+        <Menu className="h-10 w-10" />
+        <span className="sr-only">{headerDict.menu}</span>
       </SheetTrigger>
       <SheetContent className="md:hidden">
         <SheetHeader>
@@ -34,50 +44,28 @@ export const MobileNavSheet = async ({ lang }: { lang: Language }) => {
           </SheetTitle>
         </SheetHeader>
         <nav className="mt-6 flex flex-col space-y-2">
-          <NavLink href={ROUTES.HOME.FEATURES.SECTION(lang)}>
-            {dict.layout.header.features}
-          </NavLink>
-          <NavLink href={ROUTES.HOME.PRICING.SECTION(lang)}>
-            {dict.layout.header.pricing}
-          </NavLink>
-          <NavLink href={ROUTES.DASHBOARD.INDEX(lang)}>
-            {dict.layout.header.dashboard}
-          </NavLink>
+          {navItems.map(item => (
+            <SheetClose asChild key={item.href}>
+              <Button
+                variant="ghost"
+                type="button"
+                asChild
+                className="justify-start"
+                size="sm"
+              >
+                <Link href={item.href}>{item.label}</Link>
+              </Button>
+            </SheetClose>
+          ))}
           <SheetClose className="w-full">
             <Auth lang={lang} />
           </SheetClose>
         </nav>
         <div className="border-border mt-10 flex flex-col gap-2 border-t pt-2">
-          <LanguageSwitcher>
-            {commonDict.actions.changeLanguage}
-          </LanguageSwitcher>
-          <ThemeToggle>{commonDict.actions.toggleTheme}</ThemeToggle>
+          <LanguageSwitcher>{actionsDict.changeLanguage}</LanguageSwitcher>
+          <ThemeToggle>{actionsDict.toggleTheme}</ThemeToggle>
         </div>
       </SheetContent>
     </Sheet>
-  )
-}
-
-const NavLink = ({
-  href,
-  children
-}: {
-  href: string
-  children: React.ReactNode
-}) => {
-  return (
-    <SheetClose asChild>
-      <Button
-        variant="ghost"
-        type="button"
-        asChild
-        className="justify-start"
-        size="sm"
-      >
-        <Link href={href} className="">
-          {children}
-        </Link>
-      </Button>
-    </SheetClose>
   )
 }

@@ -13,44 +13,48 @@ type FooterSection = {
 }
 
 export async function Footer({ lang }: { lang: Language }) {
-  const { public: dict } = await getDictionary(lang)
+  const {
+    public: {
+      layout: { footer: dict }
+    }
+  } = await getDictionary(lang)
 
   const sections: FooterSection[] = [
     {
       heading: APP_NAME,
-      subtitle: dict.layout.footer.description,
+      subtitle: dict.description,
       links: []
     },
     {
-      heading: dict.layout.footer.quickLinks,
+      heading: dict.quickLinks,
       links: [
         {
           href: ROUTES.HOME.FEATURES.SECTION(lang),
-          label: dict.layout.footer.features
+          label: dict.features
         },
         {
           href: ROUTES.HOME.PRICING.SECTION(lang),
-          label: dict.layout.footer.pricing
+          label: dict.pricing
         },
         {
           href: ROUTES.DASHBOARD.INDEX(lang),
-          label: dict.layout.footer.dashboard
+          label: dict.dashboard
         },
-        { href: ROUTES.CONTACT(lang), label: dict.layout.footer.contact }
+        { href: ROUTES.CONTACT(lang), label: dict.contact }
       ]
     },
     {
-      heading: dict.layout.footer.legal,
+      heading: dict.legal,
       links: [
-        { href: ROUTES.TERMS(lang), label: dict.layout.footer.termsOfService },
-        { href: ROUTES.PRIVACY(lang), label: dict.layout.footer.privacyPolicy }
+        { href: ROUTES.TERMS(lang), label: dict.termsOfService },
+        { href: ROUTES.PRIVACY(lang), label: dict.privacyPolicy }
       ]
     },
     {
-      heading: dict.layout.footer.support,
+      heading: dict.support,
       links: [
-        { href: ROUTES.SUPPORT(lang), label: dict.layout.footer.helpCenter },
-        { href: ROUTES.CONTACT(lang), label: dict.layout.footer.contactSupport }
+        { href: ROUTES.SUPPORT(lang), label: dict.helpCenter },
+        { href: ROUTES.CONTACT(lang), label: dict.contactSupport }
       ]
     }
   ]
@@ -91,7 +95,7 @@ export async function Footer({ lang }: { lang: Language }) {
         </div>
 
         <div className="border-border mt-8 border-t pt-8 text-center">
-          <p>{`© 2025 ${APP_NAME}. ${dict.layout.footer.copyright}`}</p>
+          <p>{`© 2025 ${APP_NAME}. ${dict.copyright}`}</p>
         </div>
       </div>
     </footer>

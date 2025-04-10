@@ -5,7 +5,11 @@ import { getDictionary } from '@/localization/server'
 import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 
 export async function Auth({ lang }: { lang: Language }) {
-  const { public: dict } = await getDictionary(lang)
+  const {
+    public: {
+      layout: { header: dict }
+    }
+  } = await getDictionary(lang)
 
   return (
     <>
@@ -16,7 +20,7 @@ export async function Auth({ lang }: { lang: Language }) {
           signUpForceRedirectUrl={ROUTES.DASHBOARD.INDEX(lang)}
         >
           <Button size="sm" className="w-full md:w-auto">
-            {dict.layout.header.login}
+            {dict.login}
           </Button>
         </SignInButton>
       </SignedOut>

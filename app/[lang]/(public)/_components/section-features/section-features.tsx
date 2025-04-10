@@ -11,9 +11,12 @@ import {
 } from 'lucide-react'
 import { FeatureCard } from './feature-card'
 
-export async function FeaturesSection({ lang }: { lang: Language }) {
-  const { public: dict } = await getDictionary(lang)
-  const { items } = dict.home.features
+export async function SectionFeatures({ lang }: { lang: Language }) {
+  const {
+    public: {
+      home: { features: dict }
+    }
+  } = await getDictionary(lang)
 
   const featureIcons = [
     LineChart,
@@ -24,7 +27,7 @@ export async function FeaturesSection({ lang }: { lang: Language }) {
     LayoutDashboard
   ]
 
-  const features = items.map((item, index) => ({
+  const features = dict.items.map((item, index) => ({
     icon: featureIcons[index],
     title: item.title,
     description: item.description
@@ -38,7 +41,7 @@ export async function FeaturesSection({ lang }: { lang: Language }) {
       <div className="bg-grid-white/5 absolute inset-0 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.5))]" />
       <div className="relative container mx-auto">
         <h2 className="mb-16 text-center text-3xl font-bold tracking-tight md:text-4xl lg:text-5xl">
-          {dict.home.features.title}
+          {dict.title}
         </h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
           {features.map(({ icon, title, description }) => (

@@ -13,7 +13,11 @@ export function BillingToggle({
   setBillingCycle,
   discountPercentage
 }: Props) {
-  const { public: dict } = useDictionary()
+  const {
+    public: {
+      home: { pricing: dict }
+    }
+  } = useDictionary()
 
   return (
     <div className="mb-12 flex items-center justify-center">
@@ -26,7 +30,7 @@ export function BillingToggle({
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          {dict.home.pricing.monthly}
+          {dict.monthly}
         </button>
         <button
           onClick={() => setBillingCycle('yearly')}
@@ -36,9 +40,9 @@ export function BillingToggle({
               : 'text-muted-foreground hover:text-foreground'
           }`}
         >
-          {dict.home.pricing.yearly}
+          {dict.yearly}
           <span className="ml-2 inline-flex items-center rounded-full bg-green-100 px-2 py-0.5 text-xs font-medium text-green-800 dark:bg-green-900 dark:text-green-100">
-            {dict.home.pricing.save} {discountPercentage}%
+            {dict.save} {discountPercentage}%
           </span>
         </button>
       </div>
