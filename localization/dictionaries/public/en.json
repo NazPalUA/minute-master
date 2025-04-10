@@ -7,8 +7,6 @@
   "layout": {
     "language": "Language",
     "theme": "Theme",
-    "toggleTheme": "Toggle theme",
-    "changeLanguage": "Change language",
 
     "header": {
       "features": "Features",
@@ -101,8 +99,8 @@
 
     "pricing": {
       "title": "Pricing Plans",
-      "plans": [
-        {
+      "plans": {
+        "basic": {
           "name": "Basic",
           "features": [
             "5 Active Projects",
@@ -111,7 +109,7 @@
             "Email Support"
           ]
         },
-        {
+        "pro": {
           "name": "Pro",
           "features": [
             "Unlimited Projects",
@@ -121,7 +119,7 @@
             "API Access"
           ]
         },
-        {
+        "enterprise": {
           "name": "Enterprise",
           "features": [
             "All Pro Features",
@@ -131,7 +129,7 @@
             "Advanced Security Features"
           ]
         }
-      ],
+      },
       "chooseMonthly": "Choose Monthly",
       "chooseYearly": "Choose Yearly",
       "month": "month",

@@ -20,7 +20,7 @@ const DICT_SECTIONS: Array<keyof Dictionary> = [
   'section',
   'task',
   'time',
-  'timeLog'
+  'time-log'
 ] as const
 
 const dictionaries = Object.fromEntries(

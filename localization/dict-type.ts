@@ -15,5 +15,5 @@ export type Dictionary = {
   section: SectionDict
   task: TaskDict
   time: TimeDict
-  timeLog: TimeLogDict
+  'time-log': TimeLogDict
 }
