@@ -45,6 +45,11 @@
   },
 
   "actions": {
+    "select": {
+      "placeholder": "Select Task",
+      "noItems": "No tasks found",
+      "none": "No task"
+    },
     "create": {
       "trigger": "Create Task",
       "title": "Create Task",

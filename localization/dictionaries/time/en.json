@@ -172,6 +172,7 @@
   },
 
   "common": {
+    "totalTime": "Total Time",
     "dueDate": "Due Date",
     "startDate": "Start Date",
     "endDate": "End Date",
@@ -184,5 +185,10 @@
     "endTime": "End Time",
     "start": "Start",
     "end": "End"
+  },
+
+  "actions": {
+    "selectTimeRange": "Select Time Range",
+    "selectBarSize": "Select Bar Size"
   }
 }

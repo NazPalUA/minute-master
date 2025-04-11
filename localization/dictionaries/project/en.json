@@ -25,6 +25,10 @@
   },
 
   "actions": {
+    "select": {
+      "placeholder": "Select Project",
+      "noItems": "No projects found"
+    },
     "create": {
       "trigger": "Create Project",
       "title": "Create Project",

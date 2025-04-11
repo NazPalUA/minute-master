@@ -12,6 +12,8 @@
     "dashboard": "Dashboard",
     "projects": "Projects",
     "tasks": "Tasks",
+    "time-logs": "Time Logs",
+    "details": "Details",
     "timer": "Timer",
     "settings": "Settings"
   },

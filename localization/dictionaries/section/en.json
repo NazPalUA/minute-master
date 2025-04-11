@@ -17,6 +17,10 @@
   },
 
   "actions": {
+    "select": {
+      "placeholder": "Select Section",
+      "noItems": "No sections found"
+    },
     "create": {
       "trigger": "Add Section",
       "title": "Create Section",
