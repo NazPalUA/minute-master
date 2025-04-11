@@ -16,7 +16,7 @@ export async function ActionButtons({ lang }: { lang: Language }) {
     <div className="flex flex-col justify-center gap-4 sm:flex-row">
       <Button
         size="lg"
-        className="group from-primary hover:shadow-primary/25 relative overflow-hidden bg-gradient-to-r to-blue-600   transition-all duration-300 hover:shadow-md"
+        className="group from-primary hover:shadow-primary/25 relative overflow-hidden bg-gradient-to-r to-blue-600 transition-all duration-300 hover:shadow-md"
         asChild
       >
         <Link href={ROUTES.DASHBOARD.INDEX(lang)}>
@@ -30,7 +30,7 @@ export async function ActionButtons({ lang }: { lang: Language }) {
       <Button
         size="lg"
         variant="outline"
-        className="group border-input hover:border-primary hover:text-primary flex items-center border   transition-all duration-300"
+        className="group border-input hover:border-primary hover:text-primary flex items-center border transition-all duration-300"
       >
         <span className="bg-primary/10 text-primary mr-2 flex size-5 items-center justify-center rounded-full transition-transform duration-300 group-hover:scale-110">
           <Play className="fill-primary size-3" />

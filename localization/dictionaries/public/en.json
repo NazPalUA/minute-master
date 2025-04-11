@@ -31,7 +31,7 @@
 
       "support": "Support",
       "helpCenter": "Help Center",
-      "contactSupport": "Contact Support",
+      "contactSupport": "Contact us",
 
       "copyright": "All rights reserved."
     }
@@ -117,6 +117,133 @@
       ],
       "startFreeTrial": "Start Your Free Trial",
       "noCommitment": "No commitment. Cancel anytime during your trial."
+    }
+  },
+
+  "termsOfUse": {
+    "title": "TimeCraft Terms of Use",
+    "lastUpdated": "Last Updated: 11.04.2025",
+    "section1": {
+      "title": "Governing Law & Dispute Resolution",
+      "content": "These Terms shall be governed by and construed in accordance with the laws of Ukraine. Any disputes arising out of or in connection with these Terms shall be exclusively resolved by the courts of Ukraine. Alternatively, if both parties agree, disputes may be subject to binding arbitration under rules to be agreed upon by the parties, with the venue located in Ukraine."
+    },
+    "section2": {
+      "title": "Service Description and User Data",
+      "content": "TimeCraft is a flexible time-tracking and project management tool. Users can log work by organizing entries into Projects, which are subdivided into Sections, with Tasks existing only within Sections. All logged time is always associated with a specific Project and Section, and optionally with a Task. The Service stores user-supplied data including Projects, Sections, Tasks, and Time Logs. Users' personal account information is managed by Clerk and is not stored in our database. When users delete their data, it will be permanently removed from our system. For analytics and error monitoring, TimeCraft integrates with third-party services (e.g., PostHog and Sentry)."
+    },
+    "section3": {
+      "title": "Subscription and Billing",
+      "content": "The Service is available on a subscription basis through two payment options: monthly and yearly subscriptions, with a two-week free trial (card details required). The yearly subscription is offered at a 20% discount relative to the monthly plan. Subscriptions automatically renew at the end of the free trial and billing cycles unless cancelled. Any changes to subscription pricing or terms will be communicated via email. All billing is processed through Paddle, and subscription fees are non-refundable."
+    },
+    "section4": {
+      "title": "Disclaimers and Limitation of Liability",
+      "content": "The Service is provided on an \"AS IS\" basis without any warranties, express or implied. TimeCraft is in early development and may contain errors, bugs, or inaccuracies in email delivery, analytics, or data processing. TIMECRAFT SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, nor for any service interruptions or data loss. Users accept the service at their own risk."
+    },
+    "section5": {
+      "title": "Termination and Suspension",
+      "content": "TimeCraft reserves the right to suspend or terminate a user's account immediately if the user engages in harmful conduct such as attacks or fraudulent activities. Upon termination, access to the Service will be revoked and any stored data may be permanently deleted."
+    },
+    "section6": {
+      "title": "Amendments to Terms",
+      "content": "TimeCraft reserves the right to modify these Terms at any time. Significant changes will be communicated to users via email, and continued use of the Service after such notice constitutes acceptance of the updated Terms."
+    },
+    "section7": {
+      "title": "Contact Information",
+      "content": "For any questions regarding these Terms, please refer to the footer of the website where you will find a link to our Contact page."
+    }
+  },
+
+  "confidentialityPolicy": {
+    "title": "Confidentiality Policy",
+    "introduction": "TimeCraft is developed by a sole proprietor dedicated to protecting the confidentiality of your data. This policy explains how your information—including projects, sections, tasks, and time log entries—is collected, used, stored, and safeguarded.",
+    "definition": {
+      "title": "Definition of Confidential Information",
+      "content": "Confidential Information includes any data you provide through TimeCraft, such as project details, time entries, and other sensitive information. Publicly available information is not considered confidential."
+    },
+    "obligations": {
+      "title": "Developer Commitments",
+      "content": "As the sole developer behind TimeCraft, I take reasonable measures to protect your data using secure storage, encryption, and access controls. However, please note that no system is completely infallible."
+    },
+    "accessDisclosure": {
+      "title": "Access and Disclosure",
+      "content": "Access to your confidential information is limited to what is necessary for maintaining and improving the service. Data may be disclosed only when required by law or with your consent, and only through trusted third-party services used for analytics and error management."
+    },
+    "dataHandling": {
+      "title": "Data Handling and Retention",
+      "content": "All data you provide—including projects, sections, tasks, and time log entries—is securely stored in our database. When you delete your data, it is permanently removed from the system."
+    },
+    "duration": {
+      "title": "Duration of Confidentiality Obligations",
+      "content": "Your confidential information remains protected for as long as it is stored with TimeCraft and even after your account is terminated, provided that the information is not made public."
+    },
+    "userResponsibilities": {
+      "title": "User Responsibilities",
+      "content": "You are responsible for maintaining the confidentiality of your account credentials and for safeguarding any sensitive information you provide."
+    },
+    "amendments": {
+      "title": "Amendments and Updates",
+      "content": "Any changes to this Confidentiality Policy will be communicated to you via email. Your continued use of TimeCraft following such changes indicates your acceptance of the updated policy."
+    },
+    "contact": {
+      "title": "Contact Information",
+      "content": "For any inquiries regarding this Confidentiality Policy, please refer to the footer of the website where you will find a link to our Contact page."
+    }
+  },
+
+  "support": {
+    "title": "Support Center",
+    "faqs": {
+      "title": "Frequently Asked Questions",
+      "description": "Find quick answers to common questions about using TimeCraft.",
+      "questions": [
+        {
+          "question": "How do I create a new project?",
+          "answer": "Navigate to the Dashboard and click the \"New Project\" button in the Projects section."
+        },
+        {
+          "question": "How do I track time?",
+          "answer": "Select a project or task and click the play button to start tracking time. Click stop when finished."
+        },
+        {
+          "question": "Can I export my time logs?",
+          "answer": "This feature is not yet available. However, we are working on it."
+        }
+      ]
+    }
+  },
+
+  "contact": {
+    "title": "Contact Us",
+    "emailSection": {
+      "title": "Email Us",
+      "description": "For any inquiries about TimeCraft, please reach out via email. We typically respond within 24-48 hours during business days.",
+      "contactEmailTitle": "Contact Email"
+    },
+    "tipsSection": {
+      "title": "Contact Tips",
+      "description": "To help us assist you more efficiently, please include the following information in your email:",
+      "tips": [
+        {
+          "title": "Account Information",
+          "description": "Include your account email address so we can locate your information."
+        },
+        {
+          "title": "Issue Details",
+          "description": "Provide a clear description of your inquiry or issue, including any relevant details."
+        },
+        {
+          "title": "Screenshots or Error Messages",
+          "description": "If applicable, include screenshots of any errors you're experiencing."
+        },
+        {
+          "title": "Device and Browser Information",
+          "description": "Let us know which device, operating system, and browser you're using."
+        }
+      ],
+      "formNote": {
+        "title": "Note",
+        "description": "We're currently working on implementing a direct contact form. For now, please use email to get in touch with us."
+      }
     }
   }
 }
