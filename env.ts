@@ -1,0 +1,61 @@
+import { createEnv } from '@t3-oss/env-nextjs'
+import { z } from 'zod'
+
+export const env = createEnv({
+  server: {
+    // Environment (automatically set by Next.js)
+    NODE_ENV: z.enum(['development', 'production', 'test']),
+
+    // Atlas
+    ATLAS_URI: z.string().min(1),
+    ATLAS_DATABASE: z.string().min(1),
+
+    ATLAS_COLLECTION_PROJECTS: z.string().min(1),
+    ATLAS_COLLECTION_SECTIONS: z.string().min(1),
+    ATLAS_COLLECTION_TASKS: z.string().min(1),
+    ATLAS_COLLECTION_TIME_LOGS: z.string().min(1),
+
+    // Clerk
+    CLERK_SECRET_KEY: z.string().min(1)
+  },
+
+  client: {
+    // Clerk
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1),
+
+    // Pricing
+    NEXT_PUBLIC_PRICE_MONTHLY: z.coerce.number().int().positive(),
+    NEXT_PUBLIC_PRICE_YEARLY: z.coerce.number().int().positive(),
+
+    // Support
+    NEXT_PUBLIC_SUPPORT_EMAIL: z.string().email()
+  },
+
+  runtimeEnv: {
+    // Environment
+    NODE_ENV: process.env.NODE_ENV,
+
+    // Atlas
+    ATLAS_URI: process.env.ATLAS_URI,
+    ATLAS_DATABASE: process.env.ATLAS_DATABASE,
+
+    ATLAS_COLLECTION_PROJECTS: process.env.ATLAS_COLLECTION_PROJECTS,
+    ATLAS_COLLECTION_SECTIONS: process.env.ATLAS_COLLECTION_SECTIONS,
+    ATLAS_COLLECTION_TASKS: process.env.ATLAS_COLLECTION_TASKS,
+    ATLAS_COLLECTION_TIME_LOGS: process.env.ATLAS_COLLECTION_TIME_LOGS,
+
+    // Clerk
+    CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,
+    NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY:
+      process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY,
+
+    // Pricing
+    NEXT_PUBLIC_PRICE_MONTHLY: process.env.NEXT_PUBLIC_PRICE_MONTHLY,
+    NEXT_PUBLIC_PRICE_YEARLY: process.env.NEXT_PUBLIC_PRICE_YEARLY,
+
+    // Support
+    NEXT_PUBLIC_SUPPORT_EMAIL: process.env.NEXT_PUBLIC_SUPPORT_EMAIL
+  },
+
+  emptyStringAsUndefined: true
+})

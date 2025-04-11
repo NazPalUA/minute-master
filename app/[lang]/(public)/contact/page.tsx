@@ -1,3 +1,4 @@
+import { env } from '@/env'
 import { Language } from '@/localization'
 import { getDictionary } from '@/localization/server'
 import { Mail, MessageSquare } from 'lucide-react'
@@ -10,7 +11,7 @@ export default async function Contact(props: { params: Params }) {
     public: { contact: dict }
   } = await getDictionary(lang)
 
-  const supportEmail = process.env.NEXT_PUBLIC_SUPPORT_EMAIL
+  const supportEmail = env.NEXT_PUBLIC_SUPPORT_EMAIL
 
   return (
     <section className="px-4 py-12">

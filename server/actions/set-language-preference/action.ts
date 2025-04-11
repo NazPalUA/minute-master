@@ -1,5 +1,6 @@
 'use server'
 
+import { env } from '@/env'
 import {
   type Language,
   LANGUAGE_COOKIE_EXPIRY,
@@ -13,7 +14,7 @@ export async function setLanguagePreference(language: Language) {
   cookieStore.set(LANGUAGE_COOKIE_NAME, language, {
     path: '/',
     maxAge: LANGUAGE_COOKIE_EXPIRY * 24 * 60 * 60,
-    secure: process.env.NODE_ENV === 'production',
+    secure: env.NODE_ENV === 'production',
     sameSite: 'lax'
   })
 }

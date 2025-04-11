@@ -1,5 +1,6 @@
 'use client'
 
+import { env } from '@/env'
 import { useState } from 'react'
 import { BillingToggle } from './billing-toggle'
 import { PricingCard } from './pricing-card'
@@ -9,8 +10,9 @@ export function PricingPlan() {
     'yearly'
   )
 
-  const monthlyPrice = Number(process.env.NEXT_PUBLIC_PRICE_MONTHLY)
-  const yearlyPrice = Number(process.env.NEXT_PUBLIC_PRICE_YEARLY)
+  const monthlyPrice = env.NEXT_PUBLIC_PRICE_MONTHLY
+  const yearlyPrice = env.NEXT_PUBLIC_PRICE_YEARLY
+
   const yearlyPricePerMonth = yearlyPrice / 12
   const savingsAmount = monthlyPrice * 12 - yearlyPrice
   const discountPercentage = Math.round(
