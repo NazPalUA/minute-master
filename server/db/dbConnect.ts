@@ -1,15 +1,6 @@
+import { env } from '@/env'
 import { Db, MongoClient, MongoClientOptions } from 'mongodb'
-import { z } from 'zod'
 import { createIndexes } from './createIndexes'
-
-// Validate environment variables with Zod
-const EnvSchema = z.object({
-  ATLAS_URI: z.string().min(1),
-  ATLAS_DATABASE: z.string().min(1),
-  NODE_ENV: z.enum(['development', 'production', 'test']).default('development')
-})
-
-const env = EnvSchema.parse(process.env)
 
 let mongoClient: MongoClient | null = null
 let database: Db | null = null
