@@ -3,6 +3,7 @@ import 'server-only'
 import { CacheTags } from '@/server/cache-tags'
 import { auth } from '@clerk/nextjs/server'
 import { unstable_cache as cache } from 'next/cache'
+import { redirect } from 'next/navigation'
 import { getData } from './query-base'
 import { GetSectionsNamesInput, Params, paramsSchema } from './schema-input'
 import { GetSectionsNamesReturn, returnSchema } from './schema-return'
@@ -38,7 +39,7 @@ export async function getSectionsNames(
   const parsedParams = paramsSchema.parse(params)
 
   const { userId } = await auth()
-  if (!userId) throw new Error('Unauthorized')
+  if (!userId) redirect('/sign-in')
 
   return await getCachedAndValidatedData(parsedParams, userId)
 }

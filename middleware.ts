@@ -4,7 +4,7 @@ import {
   LANGUAGE_COOKIE_NAME,
   type Language
 } from '@/localization'
-import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
+import { clerkMiddleware } from '@clerk/nextjs/server'
 import { match } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 import { NextRequest, NextResponse } from 'next/server'
@@ -29,10 +29,10 @@ function getLocale(request: NextRequest) {
   }
 }
 
-const isProtectedRoute = createRouteMatcher(['/:lang/dashboard(.*)'])
+// const isProtectedRoute = createRouteMatcher(['/:lang/dashboard(.*)'])
 
 export default clerkMiddleware(
-  async (auth, req) => {
+  async (_, req) => {
     const { pathname } = req.nextUrl
     const pathLang = pathname.split('/')[1]
 
@@ -46,7 +46,7 @@ export default clerkMiddleware(
     }
 
     // Handle protected routes only for valid language paths
-    if (isProtectedRoute(req)) await auth.protect()
+    // if (isProtectedRoute(req)) await auth.protect()
   },
   req => ({
     signInUrl: `${req.nextUrl.origin}/${req.nextUrl.pathname.split('/')[1]}/sign-in`,

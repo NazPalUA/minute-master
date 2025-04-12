@@ -6,6 +6,7 @@ import { updateOneSection } from '@/server/db/repos/sections'
 import { auth } from '@clerk/nextjs/server'
 import { ObjectId } from 'mongodb'
 import { revalidateTag } from 'next/cache'
+import { redirect } from 'next/navigation'
 import { paramsSchema, type Params } from './input-schema'
 
 type ActionReturn = Promise<void>
@@ -15,7 +16,7 @@ const updateSectionFn = async ({
   payload
 }: Params): ActionReturn => {
   const { userId } = await auth()
-  if (!userId) throw new Error('Unauthorized')
+  if (!userId) redirect('/sign-in')
 
   await updateOneSection(new ObjectId(sectionId), payload)
 
