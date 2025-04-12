@@ -33,14 +33,13 @@ export const ROUTES = {
         `/${lang}/dashboard/projects/${projectId}`,
       TASKS: (lang: Locale, projectId: string) =>
         `/${lang}/dashboard/projects/${projectId}/tasks`,
-      RUNTIMES: (lang: Locale, projectId: string) =>
-        `/${lang}/dashboard/projects/${projectId}/runtimes`
+      TIME_LOGS: (lang: Locale, projectId: string) =>
+        `/${lang}/dashboard/projects/${projectId}/time-logs`
     },
 
     TASKS: {
       INDEX: (lang: Locale) => `/${lang}/dashboard/tasks`
     },
-    TIMER: (lang: Locale) => `/${lang}/dashboard/timer`,
 
     SETTINGS: (lang: Locale) => `/${lang}/dashboard/settings`
   }

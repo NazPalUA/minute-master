@@ -25,6 +25,10 @@
     "section": {
       "label": "Секція",
       "placeholder": "Виберіть секцію"
+    },
+    "project": {
+      "label": "Проект",
+      "placeholder": "Виберіть проект"
     }
   },
 

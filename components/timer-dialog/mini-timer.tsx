@@ -2,11 +2,8 @@
 
 import { TimeCounterContext } from '@/components/timer-dialog/time-counter-context'
 import { Button } from '@/components/ui/button'
-import { useDictionary } from '@/hooks'
-import { ROUTES } from '@/lib/constants/routes'
 import { padAndJoinTimeValues } from '@/lib/utils/format-time'
 import { Maximize2 } from 'lucide-react'
-import { usePathname } from 'next/navigation'
 import { use } from 'react'
 import { useTimerDialogQueryState } from './lib/use-timer-dialog-query-state'
 
@@ -17,11 +14,7 @@ export function MiniTimer() {
   } = use(TimeCounterContext)
   const { isOpen, openDialog } = useTimerDialogQueryState()
 
-  const pathname = usePathname()
-  const { lang } = useDictionary()
-
-  if (isOpen || !runningTimer || pathname === ROUTES.DASHBOARD.TIMER(lang))
-    return null
+  if (isOpen || !runningTimer) return null
 
   return (
     <div className="fixed right-4 bottom-4 left-4 z-50">

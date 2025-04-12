@@ -25,6 +25,10 @@
     "section": {
       "label": "Section",
       "placeholder": "Select a section"
+    },
+    "project": {
+      "label": "Project",
+      "placeholder": "Select a project"
     }
   },
 

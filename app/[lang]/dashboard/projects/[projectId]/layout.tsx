@@ -1,5 +1,4 @@
-import { NavBar } from '@/app/[lang]/dashboard/projects/[projectId]/_components/nav-bar'
-import { ProjectDialog } from '@/components/project-dialog/project-dialog'
+import { ProjectDialog } from '@/components/project-dialog'
 import { Button } from '@/components/ui/button'
 import { ROUTES } from '@/lib/constants'
 import { Language } from '@/localization'
@@ -7,6 +6,7 @@ import { getDictionary } from '@/localization/server'
 import { getProjectInfo } from '@/server/data/get-project-info'
 import { ClipboardList, Clock, FileText, Pencil } from 'lucide-react'
 import { Suspense } from 'react'
+import { NavBar } from './_components/nav-bar'
 import { ProjectInfo, ProjectInfoSkeleton } from './_components/project-info'
 import {
   ProjectStatus,
@@ -34,7 +34,7 @@ export default async function ProjectLayout(props: {
       icon: <ClipboardList className="h-4 w-4" />
     },
     {
-      href: ROUTES.DASHBOARD.PROJECTS.RUNTIMES(lang, projectId),
+      href: ROUTES.DASHBOARD.PROJECTS.TIME_LOGS(lang, projectId),
       label: dict.navigation['time-logs'],
       icon: <Clock className="h-4 w-4" />
     }

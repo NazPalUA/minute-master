@@ -42,7 +42,7 @@ export function BreadcrumbProjectSubmenuItem({ project }: Props) {
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link href={ROUTES.DASHBOARD.PROJECTS.RUNTIMES(lang, project.id)}>
+            <Link href={ROUTES.DASHBOARD.PROJECTS.TIME_LOGS(lang, project.id)}>
               <Clock />
               <span>{dict.navigation['time-logs']}</span>
             </Link>

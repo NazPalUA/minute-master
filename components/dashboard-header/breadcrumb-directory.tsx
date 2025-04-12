@@ -50,10 +50,6 @@ export function BreadcrumbDirectory() {
       label: dict.navigation.tasks
     },
     {
-      href: ROUTES.DASHBOARD.TIMER(lang),
-      label: dict.navigation.timer
-    },
-    {
       href: ROUTES.DASHBOARD.SETTINGS(lang),
       label: dict.navigation.settings
     }
