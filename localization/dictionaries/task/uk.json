@@ -38,6 +38,10 @@
       "label": "Термін виконання",
       "placeholder": "Виберіть термін виконання"
     },
+    "estimatedTime": {
+      "label": "Оцінка часу",
+      "placeholder": "Виберіть оцінку часу"
+    },
     "project": {
       "label": "Проєкт",
       "placeholder": "Виберіть проєкт"

@@ -13,12 +13,35 @@
 
   "sort": {
     "ascending": "По возрастанию",
-    "descending": "По убыванию",
-    "byDate": "Фильтр по дате",
-    "byPeriod": "Фильтр по периоду",
-    "bySection": "Фильтр по секции",
-    "byStatus": "Фильтр по статусу",
-    "byTask": "Фильтр по задаче"
+    "descending": "По убыванию"
+  },
+
+  "filters": {
+    "byDate": {
+      "label": "Фильтр по дате",
+      "labelShort": "Дата",
+      "placeholder": "Выберите дату"
+    },
+    "byPeriod": {
+      "label": "Фильтр по периоду",
+      "labelShort": "Период",
+      "placeholder": "Выберите период"
+    },
+    "bySection": {
+      "label": "Фильтр по секции",
+      "labelShort": "Секция",
+      "placeholder": "Выберите секцию"
+    },
+    "byStatus": {
+      "label": "Фильтр по статусу",
+      "labelShort": "Статус",
+      "placeholder": "Выберите статус"
+    },
+    "byTask": {
+      "label": "Фильтр по задаче",
+      "labelShort": "Задача",
+      "placeholder": "Выберите задачу"
+    }
   },
 
   "actions": {

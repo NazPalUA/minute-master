@@ -13,12 +13,35 @@
 
   "sort": {
     "ascending": "За зростанням",
-    "descending": "За спаданням",
-    "byDate": "Фільтр за датою",
-    "byPeriod": "Фільтр за періодом",
-    "bySection": "Фільтр за секцією",
-    "byStatus": "Фільтр за статусом",
-    "byTask": "Фільтр за завданням"
+    "descending": "За спаданням"
+  },
+
+  "filters": {
+    "byDate": {
+      "label": "Фільтр по даті",
+      "labelShort": "Дата",
+      "placeholder": "Виберіть дату"
+    },
+    "byPeriod": {
+      "label": "Фільтр по періоду",
+      "labelShort": "Період",
+      "placeholder": "Виберіть період"
+    },
+    "bySection": {
+      "label": "Фільтр по секції",
+      "labelShort": "Секція",
+      "placeholder": "Виберіть секцію"
+    },
+    "byStatus": {
+      "label": "Фільтр по статусу",
+      "labelShort": "Статус",
+      "placeholder": "Виберіть статус"
+    },
+    "byTask": {
+      "label": "Фільтр по завданню",
+      "labelShort": "Завдання",
+      "placeholder": "Виберіть завдання"
+    }
   },
 
   "actions": {

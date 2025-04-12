@@ -38,6 +38,10 @@
       "label": "Due Date",
       "placeholder": "Select Due Date"
     },
+    "estimatedTime": {
+      "label": "Estimated Time",
+      "placeholder": "Select Estimated Time"
+    },
     "project": {
       "label": "Project",
       "placeholder": "Select Project"

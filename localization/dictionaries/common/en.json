@@ -13,12 +13,35 @@
 
   "sort": {
     "ascending": "Ascending",
-    "descending": "Descending",
-    "byDate": "Filter by date",
-    "byPeriod": "Filter by period",
-    "bySection": "Filter by section",
-    "byStatus": "Filter by status",
-    "byTask": "Filter by task"
+    "descending": "Descending"
+  },
+
+  "filters": {
+    "byDate": {
+      "label": "Filter by date",
+      "labelShort": "Date",
+      "placeholder": "Select date"
+    },
+    "byPeriod": {
+      "label": "Filter by period",
+      "labelShort": "Period",
+      "placeholder": "Select period"
+    },
+    "bySection": {
+      "label": "Filter by section",
+      "labelShort": "Section",
+      "placeholder": "Select section"
+    },
+    "byStatus": {
+      "label": "Filter by status",
+      "labelShort": "Status",
+      "placeholder": "Select status"
+    },
+    "byTask": {
+      "label": "Filter by task",
+      "labelShort": "Task",
+      "placeholder": "Select task"
+    }
   },
 
   "actions": {
