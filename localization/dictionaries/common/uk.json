@@ -1,12 +1,6 @@
 {
   "view": {
-    "boardView": "Дошка",
-    "boringView": "Простий вигляд",
-    "defaultView": "Вигляд за замовчуванням",
-    "fancyView": "Вишуканий вигляд",
-    "gridView": "Сітка",
-    "listView": "Список",
-    "tableView": "Таблиця",
+    "label": "Вид",
 
     "board": "Дошка ",
     "boring": "Простий ",

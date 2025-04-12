@@ -1,12 +1,6 @@
 {
   "view": {
-    "boardView": "Board view",
-    "boringView": "Boring view",
-    "defaultView": "Default view",
-    "fancyView": "Fancy view",
-    "gridView": "Grid view",
-    "listView": "List view",
-    "tableView": "Table view",
+    "label": "View",
 
     "board": "Board ",
     "boring": "Boring ",

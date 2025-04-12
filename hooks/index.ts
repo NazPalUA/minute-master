@@ -1,3 +1,4 @@
 export { useDictionary } from './use-dictionary'
 export { useLocalStorage } from './use-local-storage'
+export { usePagination } from './use-pagination'
 export { useTimer } from './use-timer'
