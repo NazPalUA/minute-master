@@ -9,6 +9,8 @@ import { cookies } from 'next/headers'
 import { NuqsAdapter } from 'nuqs/adapters/next/app'
 import { Suspense } from 'react'
 
+export const experimental_ppr = true
+
 export default async function DashboardLayout({
   children,
   params
