@@ -3,6 +3,7 @@ import 'server-only'
 import { CacheTags } from '@/server/cache-tags'
 import { auth } from '@clerk/nextjs/server'
 import { unstable_cache as cache } from 'next/cache'
+import { redirect } from 'next/navigation'
 import { getData } from './query-base'
 import { GetTasksNamesInput, Params, paramsSchema } from './schema-input'
 import { GetTasksNamesReturn, returnSchema } from './schema-return'
@@ -48,7 +49,7 @@ export async function getTasksNames(
   const parsedParams = paramsSchema.parse(params)
 
   const { userId } = await auth()
-  if (!userId) throw new Error('Unauthorized')
+  if (!userId) redirect('/sign-in')
 
   return await getCachedAndValidatedData(parsedParams, userId)
 }

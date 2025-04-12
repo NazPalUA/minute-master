@@ -8,13 +8,14 @@ import {
 } from '@/server/db/repos/time-logs'
 import { auth } from '@clerk/nextjs/server'
 import { revalidateTag } from 'next/cache'
+import { redirect } from 'next/navigation'
 import { paramsSchema, type Params } from './input-schema'
 
 type ActionReturn = Promise<{ success: boolean }>
 
 const deleteTimeLogFn = async ({ timeLogId }: Params): ActionReturn => {
   const { userId } = await auth()
-  if (!userId) throw new Error('Unauthorized')
+  if (!userId) redirect('/sign-in')
 
   const timeLog = await findOneTimeLog({ _id: timeLogId, userId })
   if (!timeLog) throw new Error('Time log not found')

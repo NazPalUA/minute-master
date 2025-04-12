@@ -3,6 +3,7 @@ import 'server-only'
 import { CacheTags } from '@/server/cache-tags'
 import { auth } from '@clerk/nextjs/server'
 import { unstable_cache as cache } from 'next/cache'
+import { redirect } from 'next/navigation'
 import { getData } from './query-base'
 import { GetRunningTimerReturn, returnSchema } from './schema-return'
 
@@ -36,7 +37,7 @@ const getCachedAndValidatedData = (userId: string) => {
 
 export async function getRunningTimer(): Promise<GetRunningTimerReturn> {
   const { userId } = await auth()
-  if (!userId) throw new Error('Unauthorized')
+  if (!userId) redirect('/sign-in')
 
   return await getCachedAndValidatedData(userId)
 }
