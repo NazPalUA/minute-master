@@ -12,7 +12,7 @@ import { AddSectionButton } from './@sections/components/add-section-button'
 import { SectionsTableBodyFallback } from './@sections/components/sections-table-body-fallback'
 import { SectionsTableHeader } from './@sections/components/sections-table-header'
 
-export default async function DetailsLayout() {
+export default function Loading() {
   const dict = useDictionary()
   const { time: timeDict, project: projectDict } = dict
 
