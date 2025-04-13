@@ -51,6 +51,12 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="o0Iz_k1Yocrxiu7HWTzsYsPJoGwJaWSpVzrgVRqQMN4"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}
       >
