@@ -1,3 +1,6 @@
 export { ChartHoursTracker } from './chart-hours-tracker'
+export { ChartHoursTrackerContainer } from './chart-hours-tracker-container'
+export { ChartHoursTrackerFallback } from './chart-hours-tracker-fallback'
+export { ChartHoursTrackerProvider } from './chart-hours-tracker-provider'
 export * from './lib/consts'
 export * from './lib/schemas'

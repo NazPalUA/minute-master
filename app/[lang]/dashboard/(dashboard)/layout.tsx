@@ -1,4 +1,4 @@
-export default async function Dashboard(props: {
+export default function Dashboard(props: {
   children: React.ReactNode
   cards: React.ReactNode
   timeDistribution: React.ReactNode
@@ -7,7 +7,6 @@ export default async function Dashboard(props: {
   return (
     <>
       {props.children}
-
       {props.cards}
       <div className="flex flex-col gap-4 2xl:flex-row">
         {props.timeDistribution}

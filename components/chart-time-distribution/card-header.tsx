@@ -8,7 +8,7 @@ import {
 } from '@/server/data/get-chart-data-time-distribution/lib/consts'
 import { use } from 'react'
 import { Selector } from '../selector'
-import { ChartSettingsContext } from './lib/chart-settings-context'
+import { ChartSettingsContext } from './chart-time-distribution-provider'
 
 type Props = {
   title: string

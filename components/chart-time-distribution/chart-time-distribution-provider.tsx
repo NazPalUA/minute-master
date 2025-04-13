@@ -1,7 +1,7 @@
 'use client'
 
 import { createContext, ReactNode } from 'react'
-import { useChartSettings } from './use-chart-settings'
+import { useChartSettings } from './lib/use-chart-settings'
 
 type ChartSettings = ReturnType<typeof useChartSettings>
 
@@ -9,7 +9,11 @@ export const ChartSettingsContext = createContext<ChartSettings>(
   {} as ChartSettings
 )
 
-export function ChartSettingsProvider({ children }: { children: ReactNode }) {
+export function ChartTimeDistributionProvider({
+  children
+}: {
+  children: ReactNode
+}) {
   const value = useChartSettings()
 
   return (

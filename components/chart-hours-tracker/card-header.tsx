@@ -5,7 +5,7 @@ import { useDictionary } from '@/hooks'
 import { timeRanges } from '@/server/data/get-chart-data-hours-tracker/lib/consts'
 import { use } from 'react'
 import { Selector } from '../selector'
-import { ChartSettingsContext } from './lib/chart-settings-context'
+import { ChartSettingsContext } from './chart-hours-tracker-provider'
 import { defaultSettings } from './lib/schemas'
 
 type Props = {

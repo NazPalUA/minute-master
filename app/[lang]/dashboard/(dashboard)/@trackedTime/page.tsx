@@ -5,7 +5,6 @@ import {
 } from '@/components/chart-hours-tracker'
 import type { SearchParams } from '@/lib/types'
 import { Language } from '@/localization'
-import { getDictionary } from '@/localization/server'
 import { getChartDataHoursTracker } from '@/server/data/get-chart-data-hours-tracker'
 
 type Params = { lang: Language }
@@ -14,9 +13,7 @@ export default async function TrackedTime(props: {
   params: Promise<Params>
   searchParams: Promise<SearchParams>
 }) {
-  const { lang } = await props.params
   const searchParams = await props.searchParams
-  const { time: dict } = await getDictionary(lang)
 
   const settingsParamValue = String(searchParams[SEARCH_PARAM_KEY] || '')
   const settings = settingsSchema.parse(
@@ -28,11 +25,5 @@ export default async function TrackedTime(props: {
     timeRange: settings.timeRange
   })
 
-  return (
-    <ChartHoursTracker
-      className="flex-1"
-      title={dict.metrics.timeTracking}
-      dataPromise={chartDataPromise}
-    />
-  )
+  return <ChartHoursTracker dataPromise={chartDataPromise} />
 }
