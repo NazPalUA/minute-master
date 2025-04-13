@@ -9,71 +9,82 @@ const transformDuration = (duration: number) => {
   return `${hours}h ${minutes}m`
 }
 
-export function getAnalytics(dict: Dictionary) {
+export async function getAnalytics(dict: Dictionary) {
   const { time: timeDict, dashboard: dashboardDict } = dict
 
+  const [
+    metricsTimeTrackingMonth,
+    metricsTimeTrackingWeek,
+    metricsTaskCompletionMonth,
+    metricsTaskCompletionWeek
+  ] = await Promise.all([
+    getMetricsTimeTracking({ period: 'month' })
+      .then(data => {
+        const value = data.value.total
+        const change = data.change.total
+        return { value, change }
+      })
+      .then(data => {
+        const value = transformDuration(data.value)
+        const change = transformDuration(data.change)
+        return { value, change }
+      }),
+    getMetricsTimeTracking({ period: 'week' })
+      .then(data => {
+        const value = data.value.average
+        const change = data.change.average
+        return { value, change }
+      })
+      .then(data => {
+        const value = transformDuration(data.value)
+        const change = transformDuration(data.change)
+        return { value, change }
+      }),
+    getMetricsTaskCompletion({ period: 'month' })
+      .then(data => {
+        const value = data.value.averageDuration
+        const change = data.change.averageDuration
+        return { value, change }
+      })
+      .then(data => {
+        const value = transformDuration(data.value)
+        const change = transformDuration(data.change)
+        return { value, change }
+      }),
+    getMetricsTaskCompletion({ period: 'week' })
+      .then(data => {
+        const value = data.value.total
+        const change = data.change.total
+        return { value, change }
+      })
+      .then(data => {
+        const value = String(data.value)
+        const change = String(data.change)
+        return { value, change }
+      })
+  ])
   return [
     {
       title: dashboardDict.cards.totalHoursThisMonth,
-      dataPromise: getMetricsTimeTracking({ period: 'month' })
-        .then(data => {
-          const value = data.value.total
-          const change = data.change.total
-          return { value, change }
-        })
-        .then(data => {
-          const value = transformDuration(data.value)
-          const change = transformDuration(data.change)
-          return { value, change }
-        }),
+      data: metricsTimeTrackingMonth,
       description: timeDict.comparisons.fromLastMonth,
       icon: Clock
     },
     {
       title: dashboardDict.cards.avgDailyHours,
-      dataPromise: getMetricsTimeTracking({ period: 'week' })
-        .then(data => {
-          const value = data.value.average
-          const change = data.change.average
-          return { value, change }
-        })
-        .then(data => {
-          const value = transformDuration(data.value)
-          const change = transformDuration(data.change)
-          return { value, change }
-        }),
+      data: metricsTimeTrackingWeek,
       description: timeDict.comparisons.fromLastWeek,
       icon: BarChart3
     },
     {
       title: dashboardDict.cards.avgTaskDuration,
-      dataPromise: getMetricsTaskCompletion({ period: 'month' })
-        .then(data => {
-          const value = data.value.averageDuration
-          const change = data.change.averageDuration
-          return { value, change }
-        })
-        .then(data => {
-          const value = transformDuration(data.value)
-          const change = transformDuration(data.change)
-          return { value, change }
-        }),
+      data: metricsTaskCompletionMonth,
       description: timeDict.comparisons.fromLastMonth,
       icon: Timer
     },
     {
       title: dashboardDict.cards.completedTasks,
-      dataPromise: getMetricsTaskCompletion({ period: 'week' })
-        .then(data => {
-          const value = data.value.total
-          const change = data.change.total
-          return { value, change }
-        })
-        .then(data => {
-          const value = String(data.value)
-          const change = String(data.change)
-          return { value, change }
-        }),
+      data: metricsTaskCompletionWeek,
       description: timeDict.comparisons.thisWeek,
       icon: CheckCircle
     }

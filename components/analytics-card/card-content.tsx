@@ -1,11 +1,11 @@
 export async function AnalyticCardContent({
-  dataPromise,
+  data,
   description
 }: {
-  dataPromise: Promise<{ value: string; change?: string }>
+  data: { value: string; change?: string }
   description?: string
 }) {
-  const { value, change } = await dataPromise
+  const { value, change } = data
   const hasAdditionalInfo = change || description
 
   return (

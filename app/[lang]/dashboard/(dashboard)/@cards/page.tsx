@@ -15,7 +15,7 @@ export default async function Cards(props: {
   const { lang } = await props.params
   const dict = await getDictionary(lang)
 
-  const analytics = getAnalytics(dict)
+  const analytics = await getAnalytics(dict)
 
   return analytics.map(data => {
     return (
@@ -24,10 +24,7 @@ export default async function Cards(props: {
         Icon={data.icon}
         title={data.title}
       >
-        <AnalyticCardContent
-          dataPromise={data.dataPromise}
-          description={data.description}
-        />
+        <AnalyticCardContent data={data.data} description={data.description} />
       </AnalyticCardContainer>
     )
   })
