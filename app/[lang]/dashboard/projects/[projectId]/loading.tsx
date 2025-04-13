@@ -1,16 +1,15 @@
 'use client'
 
-import { CardHeader as TrackerCardHeader } from '@/components/chart-hours-tracker/card-header'
-import { CardHeader as TimeDistributionCardHeader } from '@/components/chart-time-distribution/card-header'
 import { LoadingSpinner } from '@/components/loading-spinner'
+import { Selector } from '@/components/selector'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Table } from '@/components/ui/table'
 import { useDictionary } from '@/hooks'
 import { CalendarClock, CheckCircle, Clock } from 'lucide-react'
-import { ProgressMetricFallback } from './@progress/_components/progress-metric-fallback'
-import { AddSectionButton } from './@sections/components/add-section-button'
-import { SectionsTableBodyFallback } from './@sections/components/sections-table-body-fallback'
-import { SectionsTableHeader } from './@sections/components/sections-table-header'
+import { ProgressMetricFallback } from './(details)/@progress/_components/progress-metric-fallback'
+import { AddSectionButton } from './(details)/@sections/components/add-section-button'
+import { SectionsTableBodyFallback } from './(details)/@sections/components/sections-table-body-fallback'
+import { SectionsTableHeader } from './(details)/@sections/components/sections-table-header'
 
 export default function Loading() {
   const dict = useDictionary()
@@ -20,7 +19,19 @@ export default function Loading() {
     <div className="grid grid-cols-1 gap-4 2xl:grid-cols-2">
       {/* timeDistribution */}
       <Card>
-        <TimeDistributionCardHeader title={timeDict.metrics.timeDistribution} />
+        <CardHeader className="flex items-center justify-between space-y-0">
+          <CardTitle className="text-xl font-semibold">
+            {timeDict.metrics.timeDistribution}
+          </CardTitle>
+          <Selector
+            placeholder={timeDict.metrics.timeDistribution}
+            defaultValue={'loading'}
+            value={'loading'}
+            setValue={() => null}
+            items={[]}
+            isLoading={true}
+          />
+        </CardHeader>
         <CardContent className="h-full">
           <LoadingSpinner containerClassName="h-[300px]" size="xl" />
         </CardContent>
@@ -28,7 +39,29 @@ export default function Loading() {
 
       {/* {props.trackedTime} */}
       <Card>
-        <TrackerCardHeader title={timeDict.metrics.timeTracking} />
+        <CardHeader className="flex items-center justify-between space-y-0">
+          <CardTitle className="text-xl font-semibold">
+            {timeDict.metrics.timeTracking}
+          </CardTitle>
+          <div className="flex items-center space-x-2">
+            <Selector
+              placeholder={timeDict.metrics.timeTracking}
+              defaultValue={'loading'}
+              value={'loading'}
+              setValue={() => null}
+              items={[]}
+              isLoading={true}
+            />
+            <Selector
+              placeholder={timeDict.metrics.timeTracking}
+              defaultValue={'loading'}
+              value={'loading'}
+              setValue={() => null}
+              items={[]}
+              isLoading={true}
+            />
+          </div>
+        </CardHeader>
         <CardContent className="h-full">
           <LoadingSpinner containerClassName="h-[300px]" size="xl" />
         </CardContent>
