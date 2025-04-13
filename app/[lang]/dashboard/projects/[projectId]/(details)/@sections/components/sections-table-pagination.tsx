@@ -4,15 +4,13 @@ import { Button } from '@/components/ui/button'
 import { useDictionary } from '@/hooks'
 import { GetSectionsDetailsReturn } from '@/server/data/get-sections-details'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { use } from 'react'
 import { useSectionsPagination } from '../hooks/use-sections-pagination'
 
 export function SectionsTablePagination({
-  sectionsPromise
+  sections
 }: {
-  sectionsPromise: Promise<GetSectionsDetailsReturn>
+  sections: GetSectionsDetailsReturn['data']
 }) {
-  const { data: sections } = use(sectionsPromise)
   const { common: commonDict } = useDictionary()
 
   const {

@@ -1,3 +1,5 @@
+'use client'
+
 import {
   type BarStep,
   type TimeRange,

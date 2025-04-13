@@ -7,15 +7,13 @@ import { useDictionary } from '@/hooks'
 import { formatTimeDuration } from '@/lib/utils'
 import { GetSectionsDetailsReturn } from '@/server/data/get-sections-details'
 import { Pencil } from 'lucide-react'
-import { use } from 'react'
 import { useSectionsPagination } from '../hooks/use-sections-pagination'
 
 export function SectionsTableBody({
-  sectionsPromise
+  sections
 }: {
-  sectionsPromise: Promise<GetSectionsDetailsReturn>
+  sections: GetSectionsDetailsReturn['data']
 }) {
-  const { data: sections } = use(sectionsPromise)
   const { time: timeDict } = useDictionary()
 
   const { paginatedSections } = useSectionsPagination({ sections })

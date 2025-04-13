@@ -1,20 +1,11 @@
 import {
-  AnalyticsCardProps,
-  AnalyticsCards
-} from '@/components/analytics-cards'
+  AnalyticCardContainer,
+  AnalyticCardContent
+} from '@/components/analytics-card'
 import type { SearchParams } from '@/lib/types'
 import { Language } from '@/localization'
 import { getDictionary } from '@/localization/server'
-import { getMetricsTaskCompletion } from '@/server/data/get-metrics-task-completion'
-import { getMetricsTimeTracking } from '@/server/data/get-metrics-time-tracking'
-import { BarChart3, CheckCircle, Clock, Timer } from 'lucide-react'
-
-const transformDuration = (duration: number) => {
-  const hours = Math.floor(duration / (1000 * 60 * 60))
-  const minutes = Math.floor((duration % (1000 * 60 * 60)) / (1000 * 60))
-  return `${hours}h ${minutes}m`
-}
-
+import { getAnalytics } from './_lib/get-analytics'
 type Params = { lang: Language }
 
 export default async function Cards(props: {
@@ -22,74 +13,19 @@ export default async function Cards(props: {
   searchParams: Promise<SearchParams>
 }) {
   const { lang } = await props.params
-  const { time: timeDict, dashboard: dashboardDict } = await getDictionary(lang)
+  const dict = await getDictionary(lang)
 
-  const analytics: AnalyticsCardProps[] = [
-    {
-      title: dashboardDict.cards.totalHoursThisMonth,
-      dataPromise: getMetricsTimeTracking({ period: 'month' })
-        .then(data => {
-          const value = data.value.total
-          const change = data.change.total
-          return { value, change }
-        })
-        .then(data => {
-          const value = transformDuration(data.value)
-          const change = transformDuration(data.change)
-          return { value, change }
-        }),
-      description: timeDict.comparisons.fromLastMonth,
-      icon: Clock
-    },
-    {
-      title: dashboardDict.cards.avgDailyHours,
-      dataPromise: getMetricsTimeTracking({ period: 'week' })
-        .then(data => {
-          const value = data.value.average
-          const change = data.change.average
-          return { value, change }
-        })
-        .then(data => {
-          const value = transformDuration(data.value)
-          const change = transformDuration(data.change)
-          return { value, change }
-        }),
-      description: timeDict.comparisons.fromLastWeek,
-      icon: BarChart3
-    },
-    {
-      title: dashboardDict.cards.avgTaskDuration,
-      dataPromise: getMetricsTaskCompletion({ period: 'month' })
-        .then(data => {
-          const value = data.value.averageDuration
-          const change = data.change.averageDuration
-          return { value, change }
-        })
-        .then(data => {
-          const value = transformDuration(data.value)
-          const change = transformDuration(data.change)
-          return { value, change }
-        }),
-      description: timeDict.comparisons.fromLastMonth,
-      icon: Timer
-    },
-    {
-      title: dashboardDict.cards.completedTasks,
-      dataPromise: getMetricsTaskCompletion({ period: 'week' })
-        .then(data => {
-          const value = data.value.total
-          const change = data.change.total
-          return { value, change }
-        })
-        .then(data => {
-          const value = String(data.value)
-          const change = String(data.change)
-          return { value, change }
-        }),
-      description: timeDict.comparisons.thisWeek,
-      icon: CheckCircle
-    }
-  ]
+  const analytics = await getAnalytics(dict)
 
-  return <AnalyticsCards analytics={analytics} />
+  return analytics.map(data => {
+    return (
+      <AnalyticCardContainer
+        key={data.title}
+        Icon={data.icon}
+        title={data.title}
+      >
+        <AnalyticCardContent data={data.data} description={data.description} />
+      </AnalyticCardContainer>
+    )
+  })
 }

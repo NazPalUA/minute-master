@@ -1,3 +1,6 @@
 export { ChartTimeDistribution } from './chart-time-distribution'
+export { ChartTimeDistributionContainer } from './chart-time-distribution-container'
+export { ChartTimeDistributionFallback } from './chart-time-distribution-fallback'
+export { ChartTimeDistributionProvider } from './chart-time-distribution-provider'
 export * from './lib/consts'
 export * from './lib/schemas'

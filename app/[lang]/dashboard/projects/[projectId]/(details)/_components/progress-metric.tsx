@@ -11,11 +11,11 @@ type Data = {
 type Props = {
   icon: React.ReactNode
   title: string
-  dataPromise: Promise<Data>
+  data: Data
 }
 
-export async function ProgressMetric({ icon, title, dataPromise }: Props) {
-  const { value, leftLabel, rightLabel, message } = await dataPromise
+export function ProgressMetric({ icon, title, data }: Props) {
+  const { value, leftLabel, rightLabel, message } = data
 
   return (
     <div className="space-y-2 p-4">
