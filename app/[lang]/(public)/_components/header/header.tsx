@@ -3,7 +3,8 @@ import { ThemeToggle } from '@/components/theme-toggle'
 import { APP_NAME, ROUTES } from '@/lib/constants'
 import { Language } from '@/localization'
 import { getDictionary } from '@/localization/server'
-import { Zap } from 'lucide-react'
+import Logo from '@/public/logo.svg'
+import Image from 'next/image'
 import Link from 'next/link'
 import { Auth } from './auth'
 import { MobileNavSheet } from './mobile-nav-sheet'
@@ -30,7 +31,7 @@ export async function Header({ lang }: { lang: Language }) {
           href={ROUTES.HOME.INDEX(lang)}
           className="flex items-center space-x-2"
         >
-          <Zap className="text-primary h-6 w-6" />
+          <Image src={Logo} alt="Logo" unoptimized className="size-6" />
           <span className="text-xl font-bold">{APP_NAME}</span>
         </Link>
 
