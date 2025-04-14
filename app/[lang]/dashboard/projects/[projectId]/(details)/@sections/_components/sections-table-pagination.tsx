@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button'
 import { useDictionary } from '@/hooks'
 import { GetSectionsDetailsReturn } from '@/server/data/get-sections-details'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { useSectionsPagination } from '../hooks/use-sections-pagination'
+import { useSectionsPagination } from '../_hooks/use-sections-pagination'
 
 export function SectionsTablePagination({
   sections

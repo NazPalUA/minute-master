@@ -34,6 +34,13 @@
       "description": "Fill in the details to update the section.",
       "success": "Section updated successfully",
       "failure": "Section update failed"
+    },
+    "delete": {
+      "trigger": "Delete Section",
+      "title": "Delete Section",
+      "description": "Are you sure you want to delete this section?",
+      "success": "Section deleted successfully",
+      "failure": "Section deletion failed"
     }
   }
 }

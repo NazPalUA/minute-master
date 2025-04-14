@@ -1,5 +1,6 @@
 'use client'
 
+import { AlertDialogDeleteEntity } from '@/components/alert-dialog-delete-entity'
 import { SectionFormDialog } from '@/components/create-section-dialog'
 import { Button } from '@/components/ui/button'
 import { TableBody, TableCell, TableRow } from '@/components/ui/table'
@@ -7,7 +8,8 @@ import { useDictionary } from '@/hooks'
 import { formatTimeDuration } from '@/lib/utils'
 import { GetSectionsDetailsReturn } from '@/server/data/get-sections-details'
 import { Pencil } from 'lucide-react'
-import { useSectionsPagination } from '../hooks/use-sections-pagination'
+import { useDeleteSectionAction } from '../_hooks/use-delete-section-action'
+import { useSectionsPagination } from '../_hooks/use-sections-pagination'
 
 export function SectionsTableBody({
   sections
@@ -16,7 +18,12 @@ export function SectionsTableBody({
 }) {
   const { time: timeDict } = useDictionary()
 
-  const { paginatedSections } = useSectionsPagination({ sections })
+  const { execute: executeDelete, optimisticState: optimisticSections } =
+    useDeleteSectionAction(sections)
+
+  const { paginatedSections } = useSectionsPagination({
+    sections: optimisticSections
+  })
 
   return (
     <TableBody>
@@ -30,7 +37,7 @@ export function SectionsTableBody({
               mins: timeDict.units.minute.shortPlural
             })}
           </TableCell>
-          <TableCell className="text-right">
+          <TableCell className="flex items-center justify-end gap-2">
             <SectionFormDialog
               updateProps={{
                 initialValues: {
@@ -44,6 +51,10 @@ export function SectionsTableBody({
                 <Pencil className="h-4 w-4" />
               </Button>
             </SectionFormDialog>
+            <AlertDialogDeleteEntity
+              onConfirmAction={() => executeDelete({ sectionId: section.id })}
+              entity="section"
+            />
           </TableCell>
         </TableRow>
       ))}

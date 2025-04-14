@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import type { SearchParams } from '@/lib/types'
 import { Language } from '@/localization'
 import { getDictionary } from '@/localization/server'
-import { AddSectionButton } from './components/add-section-button'
+import { AddSectionButton } from './_components/add-section-button'
 
 type Params = { lang: Language; projectId: string }
 

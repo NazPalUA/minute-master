@@ -2,10 +2,7 @@
 
 import { actionClient } from '@/lib/safe-action'
 import { CacheTags } from '@/server/cache-tags'
-import {
-  deleteTimeLog as deleteTimeLogRepo,
-  findOneTimeLog
-} from '@/server/db/repos/time-logs'
+import { deleteOneTimeLog } from '@/server/db/repos/time-logs'
 import { auth } from '@clerk/nextjs/server'
 import { revalidateTag } from 'next/cache'
 import { redirect } from 'next/navigation'
@@ -17,10 +14,7 @@ const deleteTimeLogFn = async ({ timeLogId }: Params): ActionReturn => {
   const { userId } = await auth()
   if (!userId) redirect('/sign-in')
 
-  const timeLog = await findOneTimeLog({ _id: timeLogId, userId })
-  if (!timeLog) throw new Error('Time log not found')
-
-  await deleteTimeLogRepo(timeLogId)
+  await deleteOneTimeLog({ _id: timeLogId, userId })
 
   revalidateTag(new CacheTags(userId).timeLog(timeLogId))
   revalidateTag(new CacheTags(userId).allTimeLogs())

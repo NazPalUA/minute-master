@@ -1,5 +1,6 @@
 'use client'
 
+import { AlertDialogDeleteEntity } from '@/components/alert-dialog-delete-entity'
 import { NotFount } from '@/components/not-fount'
 import { TaskDialog } from '@/components/task-dialog'
 import { TaskStatusSelector } from '@/components/task-status-selector'
@@ -19,7 +20,7 @@ import { GetTasksReturn } from '@/server/data/get-tasks'
 import { Pencil } from 'lucide-react'
 import { use } from 'react'
 import { TasksTableContext } from '../_lib/tasks-table-context'
-
+import { useDeleteTaskAction } from '../_lib/use-delete-task-action'
 type Props = {
   tasks: (GetTasksReturn['data'][number] & {
     statusLabel: string
@@ -31,7 +32,10 @@ export function TasksTable(props: Props) {
   const { common: commonDict, task: taskDict, time: timeDict } = useDictionary()
   const { isPending } = use(TasksTableContext)
 
-  if (tasks.length === 0) {
+  const { execute: executeDelete, optimisticState: optimisticTasks } =
+    useDeleteTaskAction(tasks)
+
+  if (optimisticTasks.length === 0) {
     return (
       <NotFount
         title={taskDict.emptyState.title}
@@ -54,7 +58,7 @@ export function TasksTable(props: Props) {
         </TableRow>
       </TableHeader>
       <TableBody>
-        {tasks.map(task => (
+        {optimisticTasks.map(task => (
           <TableRow key={task.id}>
             <TableCell>{task.name}</TableCell>
             <TableCell className="max-w-[200px] truncate">
@@ -73,7 +77,7 @@ export function TasksTable(props: Props) {
             <TableCell>
               {task.dueDate ? new Date(task.dueDate).toDateString() : ''}
             </TableCell>
-            <TableCell>
+            <TableCell className="flex items-center justify-end gap-2">
               <TaskDialog
                 updateTask={{
                   projectId: task.projectId,
@@ -94,6 +98,10 @@ export function TasksTable(props: Props) {
                   <Pencil className="h-4 w-4" />
                 </Button>
               </TaskDialog>
+              <AlertDialogDeleteEntity
+                onConfirmAction={() => executeDelete({ taskId: task.id })}
+                entity="task"
+              />
             </TableCell>
           </TableRow>
         ))}

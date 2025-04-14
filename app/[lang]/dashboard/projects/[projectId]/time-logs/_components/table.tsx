@@ -1,5 +1,6 @@
 'use client'
 
+import { AlertDialogDeleteEntity } from '@/components/alert-dialog-delete-entity'
 import { NotFount } from '@/components/not-fount'
 import { TimeLogDialog } from '@/components/time-log-dialog'
 import { Button } from '@/components/ui/button'
@@ -22,7 +23,6 @@ import { PencilIcon } from 'lucide-react'
 import { use } from 'react'
 import { LogsTableContext } from '../_lib/logs-table-context'
 import { useDeleteTimeLogAction } from '../_lib/use-delete-time-log-action'
-import { DeleteTimeLog } from './delete-time-log'
 
 type Props = {
   runtimes: GetTimeLogsReturn['data']
@@ -88,8 +88,9 @@ export function RuntimesTable(props: Props) {
                   <PencilIcon className="size-4" />
                 </Button>
               </TimeLogDialog>
-              <DeleteTimeLog
+              <AlertDialogDeleteEntity
                 onConfirmAction={() => executeDelete({ timeLogId: runtime.id })}
+                entity="time-log"
               />
             </TableCell>
           </TableRow>
