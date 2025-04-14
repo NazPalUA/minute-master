@@ -1,4 +1,4 @@
-export { deleteTimeLog } from './deleteTimeLog'
+export { deleteOneTimeLog } from './deleteOneTimeLog'
 export { findOneTimeLog } from './findOneTimeLog'
 export { getRunningTimeLog } from './getRunningTimeLog'
 export { getTimeRangeFilterForTimeLog } from './getTimeRangeFilterForTimeLog'
