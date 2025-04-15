@@ -1,10 +1,9 @@
 import 'server-only'
 
+import { env } from '@/env'
 import { getCollection } from '@/server/db/getCollection'
 import type { ClientSession } from 'mongodb'
 import { type TaskInput, TaskEntitySchema } from '..'
-
-const MAX_TASKS = 100
 
 export async function insertTask(
   taskCandidate: TaskInput,
@@ -17,7 +16,7 @@ export async function insertTask(
   const taskCount = await tasks.countDocuments({
     projectId: newTask.projectId
   })
-  if (taskCount >= MAX_TASKS) {
+  if (taskCount >= env.TASKS_MAX_COUNT) {
     throw new Error('Task limit reached')
   }
 

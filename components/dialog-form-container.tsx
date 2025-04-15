@@ -10,14 +10,24 @@ import {
 } from '@/components/ui/dialog'
 import { useDictionary } from '@/hooks'
 
-type Props = {
+type BaseProps = {
   children: React.ReactNode
   trigger: React.ReactNode
   open: boolean
   setOpen(state: boolean): void
-  entity: 'project' | 'task' | 'section' | 'time-log'
+}
+
+type TimeLogProps = BaseProps & {
+  entity: 'time-log'
+  variant?: 'create' | 'update' | 'import'
+}
+
+type OtherEntityProps = BaseProps & {
+  entity: 'project' | 'task' | 'section'
   variant?: 'create' | 'update'
 }
+
+type Props = TimeLogProps | OtherEntityProps
 
 export function DialogFormContainer({
   children,
@@ -27,11 +37,11 @@ export function DialogFormContainer({
   entity,
   variant = 'create'
 }: Props) {
-  const {
-    [entity]: {
-      actions: { [variant]: dict }
-    }
-  } = useDictionary()
+  const dictionary = useDictionary()
+  const dict =
+    entity === 'time-log' && variant === 'import'
+      ? dictionary[entity].actions[variant]
+      : dictionary[entity].actions[variant as 'create' | 'update']
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>

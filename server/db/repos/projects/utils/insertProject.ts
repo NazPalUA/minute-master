@@ -1,10 +1,9 @@
 import 'server-only'
 
+import { env } from '@/env'
 import { getCollection } from '@/server/db/getCollection'
 import { ClientSession } from 'mongodb'
 import { type ProjectInput, ProjectEntitySchema } from '..'
-
-const MAX_PROJECTS = 10
 
 export async function insertProject(
   projectCandidate: ProjectInput,
@@ -17,7 +16,7 @@ export async function insertProject(
   const projectCount = await projects.countDocuments({
     userId: newProject.userId
   })
-  if (projectCount >= MAX_PROJECTS) {
+  if (projectCount >= env.PROJECTS_MAX_COUNT) {
     throw new Error('Project limit reached')
   }
 

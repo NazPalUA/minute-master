@@ -1,7 +1,7 @@
 'use client'
 
+import { type Duration, formatDuration } from '@/lib/utils/format-duration'
 import { useEffect, useRef, useState } from 'react'
-import { type Duration, formatDuration } from './format-duration'
 
 type UseTimerUI = {
   isRunning: boolean
