@@ -50,7 +50,10 @@ export function DialogImportTimeLogs({ children, project }: Props) {
   const { execute: createManyTimeLogs, isPending } =
     useActionCreateManyTimeLogs({
       closeDialog,
-      resetForm: form.reset
+      resetForm: () => {
+        form.reset()
+        fileReader.reset()
+      }
     })
 
   const onSubmit = async (formData: FormValues) => {
