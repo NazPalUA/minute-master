@@ -69,6 +69,7 @@
     "refresh": "Refresh",
     "reset": "Reset",
     "resetFilters": "Reset filters",
+    "retry": "Retry",
     "save": "Save",
     "search": "Search",
     "signup": "Signup",
@@ -76,7 +77,8 @@
     "toggleTheme": "Toggle theme",
     "tryAgain": "Try again",
     "update": "Update",
-    "view": "View"
+    "view": "View",
+    "selectJSONFile": "Select JSON file"
   },
 
   "status": {
@@ -97,7 +99,12 @@
     "serverError": "Server error. Please try again later.",
     "networkError": "Network connection error. Please check your internet connection.",
     "timeoutError": "Request timed out. Please try again.",
-    "duplicateEntry": "This entry already exists."
+    "duplicateEntry": "This entry already exists.",
+    "jsonParseError": "Failed to parse JSON data. Please check the data format and try again.",
+    "fileReadAborted": "File read aborted. Please try again.",
+    "fileReadFailed": "File read failed. Please try again.",
+    "fileReadTimeout": "File read timeout. Please try again.",
+    "validation": "Failed to validate data. Please check the data format and try again."
   },
 
   "validation": {
@@ -119,7 +126,9 @@
       "pastDate": "Date cannot be in the past.",
       "endBeforeStart": "End time must be after start time."
     },
-    "selection": "Please select a valid option."
+    "selection": "Please select a valid option.",
+    "fileSize": "File size cannot exceed {max}.",
+    "fileType": "File type is not allowed."
   },
 
   "pagination": {

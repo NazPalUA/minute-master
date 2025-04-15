@@ -53,6 +53,13 @@
       "description": "Are you sure you want to delete this time log?",
       "success": "Time log deleted successfully",
       "failure": "Failed to delete time log"
+    },
+    "import": {
+      "trigger": "Import",
+      "title": "Import Time Logs",
+      "description": "Import time logs from a JSON file.",
+      "success": "Time logs imported successfully",
+      "failure": "Failed to import time logs"
     }
   }
 }
