@@ -15,6 +15,11 @@ export const env = createEnv({
     ATLAS_COLLECTION_TASKS: z.string().min(1),
     ATLAS_COLLECTION_TIME_LOGS: z.string().min(1),
 
+    // Limits
+    PROJECTS_MAX_COUNT: z.coerce.number().int().positive(),
+    SECTIONS_MAX_COUNT: z.coerce.number().int().positive(),
+    TASKS_MAX_COUNT: z.coerce.number().int().positive(),
+
     // Clerk
     CLERK_SECRET_KEY: z.string().min(1)
   },
@@ -43,6 +48,11 @@ export const env = createEnv({
     ATLAS_COLLECTION_SECTIONS: process.env.ATLAS_COLLECTION_SECTIONS,
     ATLAS_COLLECTION_TASKS: process.env.ATLAS_COLLECTION_TASKS,
     ATLAS_COLLECTION_TIME_LOGS: process.env.ATLAS_COLLECTION_TIME_LOGS,
+
+    // Limits
+    PROJECTS_MAX_COUNT: process.env.PROJECTS_MAX_COUNT,
+    SECTIONS_MAX_COUNT: process.env.SECTIONS_MAX_COUNT,
+    TASKS_MAX_COUNT: process.env.TASKS_MAX_COUNT,
 
     // Clerk
     CLERK_SECRET_KEY: process.env.CLERK_SECRET_KEY,

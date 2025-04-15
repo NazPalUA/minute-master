@@ -1,10 +1,9 @@
 import 'server-only'
 
+import { env } from '@/env'
 import { getCollection } from '@/server/db/getCollection'
 import { ClientSession } from 'mongodb'
 import { type SectionInput, SectionEntitySchema } from '..'
-
-const MAX_SECTIONS = 10
 
 export async function insertSection(
   sectionCandidate: SectionInput,
@@ -17,7 +16,7 @@ export async function insertSection(
   const sectionCount = await sections.countDocuments({
     projectId: newSection.projectId
   })
-  if (sectionCount >= MAX_SECTIONS) {
+  if (sectionCount >= env.SECTIONS_MAX_COUNT) {
     throw new Error('Section limit reached')
   }
 
