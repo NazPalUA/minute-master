@@ -1,6 +1,7 @@
 export { cn } from './cn'
 export { createDateFormatter, dateLocaleMap } from './date-formater'
-export { formatTime, formatTimeToHoursAndMinutes } from './format-time'
+export { formatDuration, type Duration } from './format-duration'
+export { formatTimeToHoursAndMinutes } from './format-time'
 export { formatTimeDuration } from './format-time-duration'
 export { getChartColorsArr } from './get-chart-colors-arr'
 export { isoWeekToDate } from './iso-week-to-date'

@@ -1,13 +1,5 @@
 import { Dictionary } from '@/localization'
-import { intervalToDuration } from 'date-fns'
-
-export function formatTime(timeInMs: number) {
-  const duration = intervalToDuration({ start: 0, end: timeInMs })
-  return {
-    hours: duration.hours || 0,
-    minutes: duration.minutes || 0
-  }
-}
+import { formatDuration } from './format-duration'
 
 export function formatTimeToHoursAndMinutes(
   timeInMs: number,
@@ -15,7 +7,7 @@ export function formatTimeToHoursAndMinutes(
   labelStyle: 'short' | 'long' | 'full' = 'short',
   showSpace = false
 ) {
-  const { hours, minutes } = formatTime(timeInMs)
+  const { hours, minutes } = formatDuration(timeInMs)
 
   const labelMap = {
     short: { hours: dict.hour.symbol, minutes: dict.minute.symbol },
