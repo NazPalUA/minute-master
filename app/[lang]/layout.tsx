@@ -1,6 +1,7 @@
 import {
   ClerkProvider,
   DictionaryProvider,
+  PostHogProvider,
   ThemeProvider
 } from '@/components/providers'
 import { APP_NAME } from '@/lib/constants'
@@ -62,7 +63,9 @@ export default async function RootLayout({
       >
         <DictionaryProvider dictionary={dict} lang={lang}>
           <ThemeProvider>
-            <ClerkProvider>{children}</ClerkProvider>
+            <ClerkProvider>
+              <PostHogProvider>{children}</PostHogProvider>
+            </ClerkProvider>
           </ThemeProvider>
         </DictionaryProvider>
       </body>

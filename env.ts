@@ -21,7 +21,10 @@ export const env = createEnv({
     TASKS_MAX_COUNT: z.coerce.number().int().positive(),
 
     // Clerk
-    CLERK_SECRET_KEY: z.string().min(1)
+    CLERK_SECRET_KEY: z.string().min(1),
+
+    // Sentry
+    SENTRY_AUTH_TOKEN: z.string().min(1)
   },
 
   client: {
@@ -33,7 +36,11 @@ export const env = createEnv({
     NEXT_PUBLIC_PRICE_YEARLY: z.coerce.number().int().positive(),
 
     // Support
-    NEXT_PUBLIC_SUPPORT_EMAIL: z.string().email()
+    NEXT_PUBLIC_SUPPORT_EMAIL: z.string().email(),
+
+    // PostHog
+    NEXT_PUBLIC_POSTHOG_KEY: z.string().min(1),
+    NEXT_PUBLIC_POSTHOG_HOST: z.string().min(1)
   },
 
   runtimeEnv: {
@@ -64,7 +71,14 @@ export const env = createEnv({
     NEXT_PUBLIC_PRICE_YEARLY: process.env.NEXT_PUBLIC_PRICE_YEARLY,
 
     // Support
-    NEXT_PUBLIC_SUPPORT_EMAIL: process.env.NEXT_PUBLIC_SUPPORT_EMAIL
+    NEXT_PUBLIC_SUPPORT_EMAIL: process.env.NEXT_PUBLIC_SUPPORT_EMAIL,
+
+    // Sentry
+    SENTRY_AUTH_TOKEN: process.env.SENTRY_AUTH_TOKEN,
+
+    // PostHog
+    NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
+    NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST
   },
 
   emptyStringAsUndefined: true
