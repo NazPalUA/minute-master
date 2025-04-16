@@ -61,13 +61,13 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} bg-background text-foreground antialiased`}
       >
-        <DictionaryProvider dictionary={dict} lang={lang}>
-          <ThemeProvider>
-            <ClerkProvider>
-              <PostHogProvider>{children}</PostHogProvider>
-            </ClerkProvider>
-          </ThemeProvider>
-        </DictionaryProvider>
+        <PostHogProvider>
+          <DictionaryProvider dictionary={dict} lang={lang}>
+            <ThemeProvider>
+              <ClerkProvider>{children}</ClerkProvider>
+            </ThemeProvider>
+          </DictionaryProvider>
+        </PostHogProvider>
       </body>
     </html>
   )
