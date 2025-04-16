@@ -14,7 +14,7 @@ import {
   TASK_FILTER_SEARCH_PARAM_KEY
 } from '../_lib/consts'
 import { LogsTableContext } from '../_lib/logs-table-context'
-import { DialogExportTimeLogs } from './dialog-export-time-logs/dialog-export-time-logs'
+import { DialogExportTimeLogs } from './dialog-export-time-logs'
 type Props = {
   sections: GetSectionsNamesReturn['data']
   tasks: GetTasksNamesReturn['data']

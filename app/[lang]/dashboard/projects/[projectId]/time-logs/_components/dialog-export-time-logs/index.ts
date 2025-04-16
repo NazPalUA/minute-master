@@ -1,1 +1,1 @@
-export { DialogImportTimeLogs } from './dialog-export-time-logs'
+export { DialogExportTimeLogs } from './dialog-export-time-logs'
