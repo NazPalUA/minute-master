@@ -19,7 +19,7 @@ type BaseProps = {
 
 type TimeLogProps = BaseProps & {
   entity: 'time-log'
-  variant?: 'create' | 'update' | 'import'
+  variant?: 'create' | 'update' | 'import' | 'export'
 }
 
 type OtherEntityProps = BaseProps & {

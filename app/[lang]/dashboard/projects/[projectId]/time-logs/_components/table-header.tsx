@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { useDictionary } from '@/hooks'
 import { GetSectionsNamesReturn } from '@/server/data/get-sections-names'
 import { GetTasksNamesReturn } from '@/server/data/get-tasks-names'
-import { Import, PlusIcon } from 'lucide-react'
+import { FileDown, Import, PlusIcon } from 'lucide-react'
 import { use } from 'react'
 import { DialogImportTimeLogs } from '../_components/dialog-import-time-logs'
 import {
@@ -14,6 +14,7 @@ import {
   TASK_FILTER_SEARCH_PARAM_KEY
 } from '../_lib/consts'
 import { LogsTableContext } from '../_lib/logs-table-context'
+import { DialogExportTimeLogs } from './dialog-export-time-logs'
 type Props = {
   sections: GetSectionsNamesReturn['data']
   tasks: GetTasksNamesReturn['data']
@@ -73,19 +74,25 @@ export function TableHeader(props: Props) {
 
       <div className="flex gap-2">
         <TimeLogDialog project={project}>
-          <Button>
-            <PlusIcon className="mr-2 h-4 w-4" />
+          <Button variant="secondary" size="sm">
+            <PlusIcon className="mr-1 size-4" />
             {timeLogDict.actions.create.trigger}
           </Button>
         </TimeLogDialog>
+
         <DialogImportTimeLogs project={project}>
-          <Button variant="outline" size="icon">
-            <Import className="h-4 w-4" />
-            <span className="sr-only">
-              {timeLogDict.actions.import.trigger}
-            </span>
+          <Button variant="outline" size="sm">
+            <Import className="mr-1 size-4" />
+            {timeLogDict.actions.import.trigger}
           </Button>
         </DialogImportTimeLogs>
+
+        <DialogExportTimeLogs project={project}>
+          <Button variant="outline" size="sm">
+            <FileDown className="mr-1 size-4" />
+            {timeLogDict.actions.export.trigger}
+          </Button>
+        </DialogExportTimeLogs>
       </div>
     </div>
   )

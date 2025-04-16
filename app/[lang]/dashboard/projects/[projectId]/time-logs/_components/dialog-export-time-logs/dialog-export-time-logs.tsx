@@ -6,39 +6,29 @@ import { DynamicSelectFormItem } from '@/components/selectors/dynamic-select-for
 import { Button } from '@/components/ui/button'
 import { DialogFooter } from '@/components/ui/dialog'
 import { Form, FormField } from '@/components/ui/form'
-import { useDictionary, useReadJsonFile } from '@/hooks'
+import { useDictionary } from '@/hooks'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Loader2 } from 'lucide-react'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { toast } from 'sonner'
-import { FileField } from './file-field'
 import { formSchema, FormValues } from './lib/form-schema'
-import { importSchema } from './lib/import-schema'
-import { useActionCreateManyTimeLogs } from './lib/use-action-create-many-time-logs'
 
 type Props = {
   children: React.ReactNode
   project: { id: string; name: string }
 }
 
-export function DialogImportTimeLogs({ children, project }: Props) {
+export function DialogExportTimeLogs({ children, project }: Props) {
   const { common: commonDict, 'time-log': timeLogDict } = useDictionary()
   const [open, setOpen] = useState(false)
-
-  const fileReader = useReadJsonFile(importSchema(commonDict.validation), {
-    onError: fileError => {
-      toast.error(fileError.message)
-    }
-  })
+  const [isLoading, setIsLoading] = useState(false)
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema(commonDict.validation)),
     defaultValues: {
       projectId: project.id,
       sectionId: undefined,
-      taskId: undefined,
-      file: undefined
+      taskId: undefined
     }
   })
 
@@ -47,27 +37,35 @@ export function DialogImportTimeLogs({ children, project }: Props) {
 
   const closeDialog = () => setOpen(false)
 
-  const { execute: createManyTimeLogs, isPending } =
-    useActionCreateManyTimeLogs({
-      closeDialog,
-      resetForm: () => {
-        form.reset()
-        fileReader.reset()
-      }
-    })
+  const triggerDownload = (url: string) => {
+    const link = document.createElement('a')
+    link.href = url
+    link.setAttribute('download', 'timelogs.json')
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
+  const buildExportUrl = (formData: FormValues): string => {
+    const baseUrl = `/api/export/time-logs?projectId=${formData.projectId}`
+    const sectionParam = formData.sectionId
+      ? `&sectionId=${formData.sectionId}`
+      : ''
+    const taskParam = formData.taskId ? `&taskId=${formData.taskId}` : ''
+    return `${baseUrl}${sectionParam}${taskParam}`
+  }
 
   const onSubmit = async (formData: FormValues) => {
-    if (!fileReader.data) {
-      toast.error(commonDict.validation.required)
-      return
+    setIsLoading(true)
+    try {
+      const url = buildExportUrl(formData)
+      triggerDownload(url)
+      closeDialog()
+    } catch (error) {
+      console.error('Error exporting time logs:', error)
+    } finally {
+      setIsLoading(false)
     }
-
-    createManyTimeLogs({
-      projectId: formData.projectId,
-      sectionId: formData.sectionId,
-      taskId: formData.taskId,
-      timeLogs: fileReader.data
-    })
   }
 
   return (
@@ -75,7 +73,7 @@ export function DialogImportTimeLogs({ children, project }: Props) {
       open={open}
       setOpen={setOpen}
       trigger={children}
-      variant="import"
+      variant="export"
       entity="time-log"
     >
       <Form {...form}>
@@ -94,12 +92,7 @@ export function DialogImportTimeLogs({ children, project }: Props) {
                 url="/api/projects"
                 dictKey="project"
                 initialOption={
-                  project
-                    ? {
-                        id: project.id,
-                        name: project.name
-                      }
-                    : undefined
+                  project ? { id: project.id, name: project.name } : undefined
                 }
               />
             )}
@@ -130,9 +123,7 @@ export function DialogImportTimeLogs({ children, project }: Props) {
             render={({ field }) => (
               <DynamicSelectFormItem
                 key={sectionId}
-                onValueChange={value => {
-                  field.onChange(value)
-                }}
+                onValueChange={field.onChange}
                 defaultValue={field.value || undefined}
                 url={
                   sectionId && projectId
@@ -145,21 +136,19 @@ export function DialogImportTimeLogs({ children, project }: Props) {
             )}
           />
 
-          <FileField fileReader={fileReader} />
-
           <DialogFooter className="mt-4 flex items-center gap-2">
             <Button
               type="submit"
               className="hover:bg-primary/90 h-10 w-full rounded-lg px-6 text-sm font-medium transition-all md:w-auto"
-              disabled={isPending}
+              disabled={isLoading}
             >
-              {isPending ? (
+              {isLoading ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                   {commonDict.status.loading}
                 </>
               ) : (
-                timeLogDict.actions.import.trigger
+                timeLogDict.actions.export.trigger
               )}
             </Button>
           </DialogFooter>

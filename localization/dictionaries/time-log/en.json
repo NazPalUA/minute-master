@@ -60,6 +60,13 @@
       "description": "Import time logs from a JSON file.",
       "success": "Time logs imported successfully",
       "failure": "Failed to import time logs"
+    },
+    "export": {
+      "trigger": "Export",
+      "title": "Export Time Logs",
+      "description": "Export time logs to a JSON file.",
+      "success": "Time logs exported successfully",
+      "failure": "Failed to export time logs"
     }
   }
 }
