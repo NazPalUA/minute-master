@@ -28,5 +28,6 @@ const createManyTimeLogsFn = async (payload: Params): ActionReturn => {
 }
 
 export const createManyTimeLogs = actionClient
+  .metadata({ actionName: 'createManyTimeLogs' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => createManyTimeLogsFn(parsedInput))

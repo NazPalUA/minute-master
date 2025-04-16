@@ -25,5 +25,6 @@ const createSectionFn = async (payload: Params): ActionReturn => {
 }
 
 export const createSection = actionClient
+  .metadata({ actionName: 'createSection' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => createSectionFn(parsedInput))

@@ -30,5 +30,6 @@ const deleteProjectFn = async ({ projectId }: Params): ActionReturn => {
 }
 
 export const deleteProject = actionClient
+  .metadata({ actionName: 'deleteProject' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => deleteProjectFn(parsedInput))

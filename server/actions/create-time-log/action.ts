@@ -32,5 +32,6 @@ const createTimeLogFn = async (payload: Params): ActionReturn => {
 }
 
 export const createTimeLog = actionClient
+  .metadata({ actionName: 'createTimeLog' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => createTimeLogFn(parsedInput))

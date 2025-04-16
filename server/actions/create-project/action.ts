@@ -65,5 +65,6 @@ const createProjectFn = async (payload: Params): ActionReturn => {
 }
 
 export const createProject = actionClient
+  .metadata({ actionName: 'createProject' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => createProjectFn(parsedInput))
