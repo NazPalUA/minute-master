@@ -159,7 +159,7 @@ export function DialogImportTimeLogs({ children, project }: Props) {
                   {commonDict.status.loading}
                 </>
               ) : (
-                timeLogDict.actions.create.trigger
+                timeLogDict.actions.import.trigger
               )}
             </Button>
           </DialogFooter>
