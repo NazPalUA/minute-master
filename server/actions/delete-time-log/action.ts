@@ -23,5 +23,6 @@ const deleteTimeLogFn = async ({ timeLogId }: Params): ActionReturn => {
 }
 
 export const deleteTimeLog = actionClient
+  .metadata({ actionName: 'deleteTimeLog' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => deleteTimeLogFn(parsedInput))

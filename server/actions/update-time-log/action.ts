@@ -32,5 +32,6 @@ const updateTimeLogFn = async ({
 }
 
 export const updateTimeLog = actionClient
+  .metadata({ actionName: 'updateTimeLog' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => updateTimeLogFn(parsedInput))
