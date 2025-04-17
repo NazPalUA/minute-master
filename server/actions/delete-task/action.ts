@@ -26,5 +26,6 @@ const deleteTaskFn = async ({ taskId }: Params): ActionReturn => {
 }
 
 export const deleteTask = actionClient
+  .metadata({ actionName: 'deleteTask' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => deleteTaskFn(parsedInput))

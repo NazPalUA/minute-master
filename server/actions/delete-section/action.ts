@@ -30,5 +30,6 @@ const deleteSectionFn = async ({ sectionId }: Params): ActionReturn => {
 }
 
 export const deleteSection = actionClient
+  .metadata({ actionName: 'deleteSection' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => deleteSectionFn(parsedInput))

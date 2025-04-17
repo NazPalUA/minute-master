@@ -26,5 +26,6 @@ const updateProjectStatusFn = async ({
 }
 
 export const updateProjectStatus = actionClient
+  .metadata({ actionName: 'updateProjectStatus' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => updateProjectStatusFn(parsedInput))

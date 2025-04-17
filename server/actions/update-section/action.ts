@@ -26,5 +26,6 @@ const updateSectionFn = async ({
 }
 
 export const updateSection = actionClient
+  .metadata({ actionName: 'updateSection' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => updateSectionFn(parsedInput))

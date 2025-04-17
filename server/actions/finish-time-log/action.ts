@@ -27,5 +27,6 @@ const finishTimeLogFn = async ({ payload }: Params): ActionReturn => {
 }
 
 export const finishTimeLog = actionClient
+  .metadata({ actionName: 'finishTimeLog' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => finishTimeLogFn(parsedInput))

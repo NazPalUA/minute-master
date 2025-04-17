@@ -29,5 +29,6 @@ const updateTaskFn = async ({
 }
 
 export const updateTask = actionClient
+  .metadata({ actionName: 'updateTask' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => updateTaskFn(parsedInput))

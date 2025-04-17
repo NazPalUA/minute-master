@@ -25,5 +25,6 @@ const createTaskFn = async (payload: Params): ActionReturn => {
 }
 
 export const createTask = actionClient
+  .metadata({ actionName: 'createTask' })
   .schema(paramsSchema)
   .action(async ({ parsedInput }) => createTaskFn(parsedInput))
