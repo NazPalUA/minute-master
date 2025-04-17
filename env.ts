@@ -21,10 +21,7 @@ export const env = createEnv({
     TASKS_MAX_COUNT: z.coerce.number().int().positive(),
 
     // Clerk
-    CLERK_SECRET_KEY: z.string().min(1),
-
-    // Sentry
-    SENTRY_AUTH_TOKEN: z.string().min(1)
+    CLERK_SECRET_KEY: z.string().min(1)
   },
 
   client: {
@@ -72,9 +69,6 @@ export const env = createEnv({
 
     // Support
     NEXT_PUBLIC_SUPPORT_EMAIL: process.env.NEXT_PUBLIC_SUPPORT_EMAIL,
-
-    // Sentry
-    SENTRY_AUTH_TOKEN: process.env.SENTRY_AUTH_TOKEN,
 
     // PostHog
     NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
