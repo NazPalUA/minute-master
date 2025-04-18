@@ -1,5 +1,5 @@
 import { formatTimeUnit } from './format-time-unit'
-import { millisecondsToTimeParts } from './time'
+import { millisecondsToTimeParts } from './milliseconds-to-time-parts'
 
 export function formatDuration(
   ms: number,
