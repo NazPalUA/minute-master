@@ -1,4 +1,5 @@
 export { cn } from './cn'
 export { getChartColorsArr } from './get-chart-colors-arr'
+export { getProgress } from './get-progress'
 export * from './time'
 export { asyncTryCatch, tryCatch } from './try-catch'

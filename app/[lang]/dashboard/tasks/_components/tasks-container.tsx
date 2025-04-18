@@ -8,6 +8,8 @@ export function TasksContainer({ children }: { children: ReactNode }) {
   const { isPending } = use(TasksTableContext)
 
   return (
-    <div className={cn('w-full', { 'opacity-30': isPending })}>{children}</div>
+    <div className={cn('grid gap-6', { 'opacity-30': isPending })}>
+      {children}
+    </div>
   )
 }

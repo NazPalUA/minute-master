@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { ROUTES } from '@/lib/constants'
-import { createDateFormatter } from '@/lib/utils'
+import { createDateFormatter, getProgress } from '@/lib/utils'
 import { Language } from '@/localization'
 import { getDictionary } from '@/localization/server'
 import { countTotalRuntime } from '@/server/data/count-total-runtime'
@@ -16,7 +16,6 @@ import { GetProjectsReturn } from '@/server/data/get-projects'
 import { millisecondsToHours } from 'date-fns'
 import { Calendar, Clock } from 'lucide-react'
 import Link from 'next/link'
-import { getProgress } from '../_lib/getProgress'
 
 export async function GridCard({
   lang,

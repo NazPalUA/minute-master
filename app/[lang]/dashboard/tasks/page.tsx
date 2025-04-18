@@ -4,7 +4,7 @@ import { SearchParams } from '@/lib/types'
 import { Language } from '@/localization'
 import { getDictionary } from '@/localization/server'
 import { getTasks } from '@/server/data/get-tasks'
-import { ListCard } from './_components/list-card'
+import { GridCard } from './_components/grid-card'
 import { TasksContainer } from './_components/tasks-container'
 import { TasksPagination } from './_components/tasks-pagination'
 
@@ -23,7 +23,7 @@ export default async function Tasks(props: {
     pagination: { totalItems, totalPages }
   } = await getTasks({
     page: getPageSchema().parse(searchParams.page),
-    limit: getPageSizeSchema().parse(searchParams.perPage)
+    limit: getPageSizeSchema({ def: 9 }).parse(searchParams.perPage)
   })
 
   if (tasks.length === 0) {
@@ -37,15 +37,9 @@ export default async function Tasks(props: {
 
   return (
     <TasksContainer>
-      <div className="rounded-md border">
-        {tasks.map((task, index) => (
-          <ListCard
-            key={task.id}
-            lang={lang}
-            task={task}
-            index={index}
-            length={tasks.length}
-          />
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {tasks.map(task => (
+          <GridCard key={task.id} lang={lang} task={task} />
         ))}
       </div>
 

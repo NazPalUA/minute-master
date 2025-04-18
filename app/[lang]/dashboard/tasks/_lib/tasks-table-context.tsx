@@ -13,7 +13,7 @@ export const TasksTableContext = createContext<TasksTable>({} as TasksTable)
 export function TasksTableProvider({ children }: { children: ReactNode }) {
   const queryPagination = useQueryPagination({
     defaultPageIndex: 0,
-    defaultPageSize: 10,
+    defaultPageSize: 9,
     shallow: false
   })
 
