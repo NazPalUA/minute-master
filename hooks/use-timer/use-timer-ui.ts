@@ -56,10 +56,14 @@ export const useTimerUI = (
     }
   }, [startDate])
 
-  const sessionDuration = millisecondsToTimeParts(currentSessionMs)
-  const totalDuration = millisecondsToTimeParts(
-    baseElapsedMs + currentSessionMs
-  )
+  const sessionDuration = {
+    ...millisecondsToTimeParts(currentSessionMs),
+    totalElapsedMs: currentSessionMs
+  }
+  const totalDuration = {
+    ...millisecondsToTimeParts(baseElapsedMs + currentSessionMs),
+    totalElapsedMs: baseElapsedMs + currentSessionMs
+  }
 
   /**
    * Start the timer

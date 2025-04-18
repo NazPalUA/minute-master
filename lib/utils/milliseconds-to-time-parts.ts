@@ -1,5 +1,4 @@
 export type TimeParts = {
-  totalElapsedMs: number
   hours: number
   minutes: number
   seconds: number
@@ -12,7 +11,6 @@ export const millisecondsToTimeParts = (milliseconds: number): TimeParts => {
   const seconds = totalSeconds % 60
 
   return {
-    totalElapsedMs: milliseconds,
     hours,
     minutes,
     seconds
