@@ -33,8 +33,8 @@ export function SectionsTableBody({
           <TableCell>{section.taskCount}</TableCell>
           <TableCell>
             {formatDuration(section.timeSpent ?? 0, {
-              hrs: timeDict.units.hour.shortPlural,
-              mins: timeDict.units.minute.shortPlural
+              hours: timeDict.units.hour.shortPlural,
+              minutes: timeDict.units.minute.shortPlural
             })}
           </TableCell>
           <TableCell className="flex items-center justify-end gap-2">

@@ -73,8 +73,8 @@ export function RuntimesTable(props: Props) {
             </TableCell>
             <TableCell>
               {formatDuration(runtime.duration, {
-                hrs: timeDict.units.hour.shortPlural,
-                mins: timeDict.units.minute.shortPlural
+                hours: timeDict.units.hour.shortPlural,
+                minutes: timeDict.units.minute.shortPlural
               })}
             </TableCell>
             <TableCell>{runtime.taskName}</TableCell>

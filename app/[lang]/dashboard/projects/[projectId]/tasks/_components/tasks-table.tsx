@@ -68,8 +68,8 @@ export function TasksTable(props: Props) {
             </TableCell>
             <TableCell>
               {formatDuration(task.totalRuntime ?? 0, {
-                hrs: timeDict.units.hour.shortPlural,
-                mins: timeDict.units.minute.shortPlural
+                hours: timeDict.units.hour.shortPlural,
+                minutes: timeDict.units.minute.shortPlural
               })}
             </TableCell>
             <TableCell>{task.section}</TableCell>
