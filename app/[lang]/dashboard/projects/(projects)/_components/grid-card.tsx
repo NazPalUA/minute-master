@@ -8,11 +8,12 @@ import {
 } from '@/components/ui/card'
 import { Progress } from '@/components/ui/progress'
 import { ROUTES } from '@/lib/constants'
-import { createDateFormatter, msToH } from '@/lib/utils'
+import { createDateFormatter } from '@/lib/utils'
 import { Language } from '@/localization'
 import { getDictionary } from '@/localization/server'
 import { countTotalRuntime } from '@/server/data/count-total-runtime'
 import { GetProjectsReturn } from '@/server/data/get-projects'
+import { millisecondsToHours } from 'date-fns'
 import { Calendar, Clock } from 'lucide-react'
 import Link from 'next/link'
 import { getProgress } from '../_lib/getProgress'
@@ -60,7 +61,7 @@ export async function GridCard({
               {getProgress(totalRuntime, estimatedTime)}%{' '}
               {dict.status.completed}
             </span>
-            <span>{msToH(estimatedTime || 0)}</span>
+            <span>{millisecondsToHours(estimatedTime || 0)}</span>
           </div>
           <div className="text-muted-foreground mt-4 flex items-center justify-between text-sm">
             <div className="flex items-center">
@@ -69,7 +70,7 @@ export async function GridCard({
             </div>
             <div className="flex items-center">
               <Clock className="mr-1 h-4 w-4" />
-              <span>{msToH(totalRuntime)}</span>
+              <span>{millisecondsToHours(totalRuntime)}</span>
             </div>
           </div>
         </CardContent>

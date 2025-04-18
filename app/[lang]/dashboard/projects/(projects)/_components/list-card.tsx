@@ -1,11 +1,11 @@
 import { StatusBadge } from '@/components/status-badge'
 import { Button } from '@/components/ui/button'
 import { ROUTES } from '@/lib/constants'
-import { msToH } from '@/lib/utils'
 import { Language } from '@/localization'
 import { getDictionary } from '@/localization/server'
 import { countTotalRuntime } from '@/server/data/count-total-runtime'
 import { GetProjectsReturn } from '@/server/data/get-projects'
+import { millisecondsToHours } from 'date-fns'
 import { BarChart2, Clock } from 'lucide-react'
 import Link from 'next/link'
 import { getProgress } from '../_lib/getProgress'
@@ -43,7 +43,7 @@ export async function ListCard({
 
         <div className="flex items-center">
           <Clock className="mr-1 h-4 w-4" />
-          <span className="text-sm">{msToH(totalRuntime)}</span>
+          <span className="text-sm">{millisecondsToHours(totalRuntime)}</span>
         </div>
         <div className="flex items-center">
           <BarChart2 className="mr-1 h-4 w-4" />

@@ -6,4 +6,3 @@ export {
   type TimeParts
 } from './milliseconds-to-time-parts'
 export { padAndJoinTimeValues } from './pad-and-join-time-values'
-export * from './timeConvertors'
