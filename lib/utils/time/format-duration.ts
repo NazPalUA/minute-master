@@ -20,61 +20,53 @@ const DEFAULT_OPTIONS: FormatOptions = {
   zeroDisplay: true
 }
 
+const createLabelMap = (
+  dict: Dictionary['time']['units'],
+  labelPlural: boolean
+) => ({
+  short: {
+    hours: dict.hour.symbol,
+    minutes: dict.minute.symbol,
+    seconds: dict.second.symbol
+  },
+  long: {
+    hours: labelPlural ? dict.hour.shortPlural : dict.hour.short,
+    minutes: labelPlural ? dict.minute.shortPlural : dict.minute.short,
+    seconds: labelPlural ? dict.second.shortPlural : dict.second.short
+  },
+  full: {
+    hours: labelPlural ? dict.hour.plural : dict.hour.singular,
+    minutes: labelPlural ? dict.minute.plural : dict.minute.singular,
+    seconds: labelPlural ? dict.second.plural : dict.second.singular
+  }
+})
+
 export function formatDuration(
   ms: number,
   dict: Dictionary['time']['units'],
   options: Partial<FormatOptions> = {}
 ): string {
-  const mergedOptions = { ...DEFAULT_OPTIONS, ...options }
   const {
-    space,
-    labelSeparator,
-    zeroDisplay,
     labelLength,
     labelPlural,
-    units
-  } = mergedOptions
-  const { hours, minutes, seconds } = millisecondsToTimeParts(ms)
+    units,
+    space,
+    labelSeparator,
+    zeroDisplay
+  } = { ...DEFAULT_OPTIONS, ...options }
 
-  const labelMap = {
-    short: {
-      hours: dict.hour.symbol,
-      minutes: dict.minute.symbol,
-      seconds: dict.second.symbol
-    },
-    long: {
-      hours: labelPlural ? dict.hour.shortPlural : dict.hour.short,
-      minutes: labelPlural ? dict.minute.shortPlural : dict.minute.short,
-      seconds: labelPlural ? dict.second.shortPlural : dict.second.short
-    },
-    full: {
-      hours: labelPlural ? dict.hour.plural : dict.hour.singular,
-      minutes: labelPlural ? dict.minute.plural : dict.minute.singular,
-      seconds: labelPlural ? dict.second.plural : dict.second.singular
-    }
-  }
+  const timeValues = millisecondsToTimeParts(ms)
+  const labels = createLabelMap(dict, labelPlural)[labelLength]
 
-  const labels = labelMap[labelLength]
-
-  const parts: string[] = []
-
-  if ((hours > 0 || zeroDisplay) && units.includes('hours')) {
-    parts.push(
-      formatTimeUnit(hours, labels.hours.toLowerCase(), labelSeparator)
+  const parts = units
+    .filter(unit => zeroDisplay || timeValues[unit] > 0)
+    .map(unit =>
+      formatTimeUnit(
+        timeValues[unit],
+        labels[unit].toLowerCase(),
+        labelSeparator
+      )
     )
-  }
-
-  if ((minutes > 0 || zeroDisplay) && units.includes('minutes')) {
-    parts.push(
-      formatTimeUnit(minutes, labels.minutes.toLowerCase(), labelSeparator)
-    )
-  }
-
-  if ((seconds > 0 || zeroDisplay) && units.includes('seconds')) {
-    parts.push(
-      formatTimeUnit(seconds, labels.seconds.toLowerCase(), labelSeparator)
-    )
-  }
 
   // Replace spaces with non-breaking spaces for consistent display
   return parts.join(space).replace(/ /g, '\u00A0') || '0'
