@@ -1,6 +1,6 @@
 'use client'
 
-import { type Duration, formatDuration } from '@/lib/utils/format-duration'
+import { type Duration, formatDuration } from '@/lib/utils'
 import { useEffect, useRef, useState } from 'react'
 
 type UseTimerUI = {

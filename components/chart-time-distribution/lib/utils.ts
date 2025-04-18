@@ -1,8 +1,7 @@
 'use client'
 
 import { ChartConfig } from '@/components/ui/chart'
-import { formatTimeToHoursAndMinutes } from '@/lib/utils/format-time'
-import { getChartColorsArr } from '@/lib/utils/get-chart-colors-arr'
+import { formatTimeToHoursAndMinutes, getChartColorsArr } from '@/lib/utils'
 import type { Dictionary } from '@/localization'
 import { GetChartDataTimeDistributionReturn } from '@/server/data/get-chart-data-time-distribution'
 import { ValueType } from 'recharts/types/component/DefaultTooltipContent'

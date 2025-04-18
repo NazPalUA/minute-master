@@ -2,7 +2,7 @@
 
 import { TimeCounterContext } from '@/components/timer-dialog/time-counter-context'
 import { Button } from '@/components/ui/button'
-import { padAndJoinTimeValues } from '@/lib/utils/format-time'
+import { padAndJoinTimeValues } from '@/lib/utils'
 import { Maximize2 } from 'lucide-react'
 import { use } from 'react'
 import { useTimerDialogQueryState } from './lib/use-timer-dialog-query-state'

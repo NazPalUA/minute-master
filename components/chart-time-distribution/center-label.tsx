@@ -1,7 +1,7 @@
 'use client'
 
 import { useDictionary } from '@/hooks/use-dictionary'
-import { formatTimeToHoursAndMinutes } from '@/lib/utils/format-time'
+import { formatTimeToHoursAndMinutes } from '@/lib/utils'
 import type { LabelProps } from 'recharts'
 
 type Props = {

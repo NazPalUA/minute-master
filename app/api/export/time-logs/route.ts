@@ -1,5 +1,4 @@
-import { asyncTryCatch } from '@/lib/utils'
-import { formatDuration } from '@/lib/utils/format-duration'
+import { asyncTryCatch, formatDuration } from '@/lib/utils'
 import { getTimeLogs } from '@/server/data/get-time-logs'
 import { NextRequest, NextResponse } from 'next/server'
 

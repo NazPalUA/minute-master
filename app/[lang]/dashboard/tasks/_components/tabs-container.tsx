@@ -2,7 +2,7 @@
 
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useDictionary } from '@/hooks'
-import { cn } from '@/lib/utils/cn'
+import { cn } from '@/lib/utils'
 import { ReactNode, use } from 'react'
 import { TasksTableContext } from '../_lib/tasks-table-context'
 

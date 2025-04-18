@@ -5,7 +5,7 @@ import { TimeCounterContext } from '@/components/timer-dialog/time-counter-conte
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { useDictionary } from '@/hooks/use-dictionary'
 import { useLocalStorage } from '@/hooks/use-local-storage'
-import { padAndJoinTimeValues } from '@/lib/utils/format-time'
+import { padAndJoinTimeValues } from '@/lib/utils'
 import { use } from 'react'
 
 export function TimeDisplay() {

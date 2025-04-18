@@ -7,8 +7,7 @@ import {
   FormMessage
 } from '@/components/ui/form'
 import { useDictionary } from '@/hooks'
-import { cn } from '@/lib/utils'
-import { dateLocaleMap } from '@/lib/utils/date-formater'
+import { cn, dateLocaleMap } from '@/lib/utils'
 import { ComponentProps } from 'react'
 import { DateTimePicker } from './ui/datetime-picker'
 

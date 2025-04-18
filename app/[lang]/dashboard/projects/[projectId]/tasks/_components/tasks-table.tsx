@@ -14,8 +14,7 @@ import {
   TableRow
 } from '@/components/ui/table'
 import { useDictionary } from '@/hooks'
-import { cn } from '@/lib/utils/cn'
-import { formatTimeDuration } from '@/lib/utils/format-time-duration'
+import { cn, formatTimeDuration } from '@/lib/utils'
 import { GetTasksReturn } from '@/server/data/get-tasks'
 import { Pencil } from 'lucide-react'
 import { use } from 'react'

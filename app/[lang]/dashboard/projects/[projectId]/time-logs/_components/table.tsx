@@ -14,9 +14,7 @@ import {
   TableRow
 } from '@/components/ui/table'
 import { useDictionary } from '@/hooks'
-import { cn } from '@/lib/utils/cn'
-import { createDateFormatter } from '@/lib/utils/date-formater'
-import { formatTimeDuration } from '@/lib/utils/format-time-duration'
+import { cn, createDateFormatter, formatTimeDuration } from '@/lib/utils'
 import { Language } from '@/localization'
 import { GetTimeLogsReturn } from '@/server/data/get-time-logs'
 import { PencilIcon } from 'lucide-react'
