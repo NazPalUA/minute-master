@@ -1,5 +1,4 @@
 import { Dictionary } from '@/localization'
-import { formatTimeUnit } from './format-time-unit'
 import { millisecondsToTimeParts } from './milliseconds-to-time-parts'
 
 type FormatOptions = {
@@ -40,6 +39,18 @@ const createLabelMap = (
     seconds: labelPlural ? dict.second.plural : dict.second.singular
   }
 })
+
+const formatTimeUnit = (
+  value: number,
+  label: string,
+  labelSeparator: string
+): string => {
+  const formattedValue = `${value}${labelSeparator}${label}`
+  return formattedValue.padStart(
+    value < 10 ? 4 + labelSeparator.length : 3 + labelSeparator.length,
+    ' '
+  )
+}
 
 export function formatDuration(
   ms: number,
