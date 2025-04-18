@@ -67,10 +67,7 @@ export function TasksTable(props: Props) {
               <TaskStatusSelector status={task.status} taskId={task.id} />
             </TableCell>
             <TableCell>
-              {formatDuration(task.totalRuntime ?? 0, {
-                hours: timeDict.units.hour.shortPlural,
-                minutes: timeDict.units.minute.shortPlural
-              })}
+              {formatDuration(task.totalRuntime ?? 0, timeDict.units)}
             </TableCell>
             <TableCell>{task.section}</TableCell>
             <TableCell>

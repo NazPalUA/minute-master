@@ -72,10 +72,7 @@ export function RuntimesTable(props: Props) {
               {runtime.end ? formatDate(new Date(runtime.end), 'PPpp') : ''}
             </TableCell>
             <TableCell>
-              {formatDuration(runtime.duration, {
-                hours: timeDict.units.hour.shortPlural,
-                minutes: timeDict.units.minute.shortPlural
-              })}
+              {formatDuration(runtime.duration, timeDict.units)}
             </TableCell>
             <TableCell>{runtime.taskName}</TableCell>
             <TableCell>{runtime.sectionName}</TableCell>

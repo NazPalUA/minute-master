@@ -1,19 +1,20 @@
+import { Dictionary } from '@/localization'
 import { formatTimeUnit } from './format-time-unit'
 import { millisecondsToTimeParts } from './milliseconds-to-time-parts'
 
-type DurationLabels = {
-  hours?: string
-  minutes?: string
-  seconds?: string
-}
-
 type FormatOptions = {
+  labelLength: 'short' | 'long' | 'full'
+  labelPlural: boolean
+  units: ('hours' | 'minutes' | 'seconds')[]
   space: string
   labelSeparator: string
   zeroDisplay: boolean
 }
 
 const DEFAULT_OPTIONS: FormatOptions = {
+  labelLength: 'long',
+  labelPlural: true,
+  units: ['hours', 'minutes'],
   space: ' ',
   labelSeparator: '',
   zeroDisplay: true
@@ -21,25 +22,58 @@ const DEFAULT_OPTIONS: FormatOptions = {
 
 export function formatDuration(
   ms: number,
-  labels: DurationLabels,
+  dict: Dictionary['time']['units'],
   options: Partial<FormatOptions> = {}
 ): string {
   const mergedOptions = { ...DEFAULT_OPTIONS, ...options }
-  const { space, labelSeparator, zeroDisplay } = mergedOptions
+  const {
+    space,
+    labelSeparator,
+    zeroDisplay,
+    labelLength,
+    labelPlural,
+    units
+  } = mergedOptions
   const { hours, minutes, seconds } = millisecondsToTimeParts(ms)
+
+  const labelMap = {
+    short: {
+      hours: dict.hour.symbol,
+      minutes: dict.minute.symbol,
+      seconds: dict.second.symbol
+    },
+    long: {
+      hours: labelPlural ? dict.hour.shortPlural : dict.hour.short,
+      minutes: labelPlural ? dict.minute.shortPlural : dict.minute.short,
+      seconds: labelPlural ? dict.second.shortPlural : dict.second.short
+    },
+    full: {
+      hours: labelPlural ? dict.hour.plural : dict.hour.singular,
+      minutes: labelPlural ? dict.minute.plural : dict.minute.singular,
+      seconds: labelPlural ? dict.second.plural : dict.second.singular
+    }
+  }
+
+  const labels = labelMap[labelLength]
 
   const parts: string[] = []
 
-  if ((hours > 0 || zeroDisplay) && labels.hours) {
-    parts.push(formatTimeUnit(hours, labels.hours, labelSeparator))
+  if ((hours > 0 || zeroDisplay) && units.includes('hours')) {
+    parts.push(
+      formatTimeUnit(hours, labels.hours.toLowerCase(), labelSeparator)
+    )
   }
 
-  if ((minutes > 0 || zeroDisplay) && labels.minutes) {
-    parts.push(formatTimeUnit(minutes, labels.minutes, labelSeparator))
+  if ((minutes > 0 || zeroDisplay) && units.includes('minutes')) {
+    parts.push(
+      formatTimeUnit(minutes, labels.minutes.toLowerCase(), labelSeparator)
+    )
   }
 
-  if ((seconds > 0 || zeroDisplay) && labels.seconds) {
-    parts.push(formatTimeUnit(seconds, labels.seconds, labelSeparator))
+  if ((seconds > 0 || zeroDisplay) && units.includes('seconds')) {
+    parts.push(
+      formatTimeUnit(seconds, labels.seconds.toLowerCase(), labelSeparator)
+    )
   }
 
   // Replace spaces with non-breaking spaces for consistent display

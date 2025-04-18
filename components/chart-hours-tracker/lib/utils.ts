@@ -3,7 +3,7 @@
 import { ChartConfig } from '@/components/ui/chart'
 import {
   dateLocaleMap,
-  formatTimeToHoursAndMinutes,
+  formatDuration,
   getChartColorsArr,
   isoWeekToDate
 } from '@/lib/utils'
@@ -55,7 +55,7 @@ export function formatTooltipValue(
   dict: Dictionary['time']['units']
 ) {
   if (typeof duration !== 'number') return duration.toLocaleString()
-  return formatTimeToHoursAndMinutes(duration, dict, 'long', ' ')
+  return formatDuration(duration, dict)
 }
 
 export const formatTimeRangeLabel = ({

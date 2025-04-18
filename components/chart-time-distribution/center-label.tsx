@@ -1,7 +1,7 @@
 'use client'
 
 import { useDictionary } from '@/hooks/use-dictionary'
-import { formatTimeToHoursAndMinutes } from '@/lib/utils'
+import { formatDuration } from '@/lib/utils'
 import type { LabelProps } from 'recharts'
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
 
 export const CenterLabel = ({ labelProps, durationMs }: Props) => {
   const { time: dict } = useDictionary()
-  const formattedTotalTime = formatTimeToHoursAndMinutes(durationMs, dict.units)
+  const formattedTotalTime = formatDuration(durationMs, dict.units)
 
   const { viewBox } = labelProps
 

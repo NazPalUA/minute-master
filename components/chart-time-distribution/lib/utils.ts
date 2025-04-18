@@ -1,7 +1,7 @@
 'use client'
 
 import { ChartConfig } from '@/components/ui/chart'
-import { formatTimeToHoursAndMinutes, getChartColorsArr } from '@/lib/utils'
+import { formatDuration, getChartColorsArr } from '@/lib/utils'
 import type { Dictionary } from '@/localization'
 import { GetChartDataTimeDistributionReturn } from '@/server/data/get-chart-data-time-distribution'
 import { ValueType } from 'recharts/types/component/DefaultTooltipContent'
@@ -51,5 +51,5 @@ export function formatTooltipValue(
   dict: Dictionary['time']['units']
 ) {
   if (typeof duration !== 'number') return duration
-  return formatTimeToHoursAndMinutes(duration, dict, 'long', ' ')
+  return formatDuration(duration, dict)
 }
