@@ -1,14 +1,11 @@
 import { NotFount } from '@/components/not-fount'
-import { TabsContent } from '@/components/ui/tabs'
-import { taskStatuses } from '@/lib/constants/task-statuses'
 import { getPageSchema, getPageSizeSchema } from '@/lib/schemas'
 import { SearchParams } from '@/lib/types'
 import { Language } from '@/localization'
 import { getDictionary } from '@/localization/server'
 import { getTasks } from '@/server/data/get-tasks'
-import { BoardSection } from './_components/board-section'
 import { ListCard } from './_components/list-card'
-import { TabsContainer } from './_components/tabs-container'
+import { TasksContainer } from './_components/tasks-container'
 import { TasksPagination } from './_components/tasks-pagination'
 
 type Params = Promise<{ lang: Language }>
@@ -39,33 +36,20 @@ export default async function Tasks(props: {
   }
 
   return (
-    <TabsContainer>
-      <TabsContent value="list" className="mt-6">
-        <div className="rounded-md border">
-          {tasks.map((task, index) => (
-            <ListCard
-              key={task.id}
-              lang={lang}
-              task={task}
-              index={index}
-              length={tasks.length}
-            />
-          ))}
-        </div>
-      </TabsContent>
-      <TabsContent value="board" className="mt-6">
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {taskStatuses.map(status => (
-            <BoardSection
-              key={status}
-              lang={lang}
-              status={status}
-              tasks={tasks.filter(task => task.status === status)}
-            />
-          ))}
-        </div>
-      </TabsContent>
+    <TasksContainer>
+      <div className="rounded-md border">
+        {tasks.map((task, index) => (
+          <ListCard
+            key={task.id}
+            lang={lang}
+            task={task}
+            index={index}
+            length={tasks.length}
+          />
+        ))}
+      </div>
+
       <TasksPagination totalItems={totalItems} totalPages={totalPages} />
-    </TabsContainer>
+    </TasksContainer>
   )
 }
