@@ -14,7 +14,7 @@ import {
   TableRow
 } from '@/components/ui/table'
 import { useDictionary } from '@/hooks'
-import { cn, formatTimeDuration } from '@/lib/utils'
+import { cn, formatDuration } from '@/lib/utils'
 import { GetTasksReturn } from '@/server/data/get-tasks'
 import { Pencil } from 'lucide-react'
 import { use } from 'react'
@@ -67,7 +67,7 @@ export function TasksTable(props: Props) {
               <TaskStatusSelector status={task.status} taskId={task.id} />
             </TableCell>
             <TableCell>
-              {formatTimeDuration(task.totalRuntime ?? 0, {
+              {formatDuration(task.totalRuntime ?? 0, {
                 hrs: timeDict.units.hour.shortPlural,
                 mins: timeDict.units.minute.shortPlural
               })}

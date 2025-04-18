@@ -14,7 +14,7 @@ import {
   TableRow
 } from '@/components/ui/table'
 import { useDictionary } from '@/hooks'
-import { cn, createDateFormatter, formatTimeDuration } from '@/lib/utils'
+import { cn, createDateFormatter, formatDuration } from '@/lib/utils'
 import { Language } from '@/localization'
 import { GetTimeLogsReturn } from '@/server/data/get-time-logs'
 import { PencilIcon } from 'lucide-react'
@@ -72,7 +72,7 @@ export function RuntimesTable(props: Props) {
               {runtime.end ? formatDate(new Date(runtime.end), 'PPpp') : ''}
             </TableCell>
             <TableCell>
-              {formatTimeDuration(runtime.duration, {
+              {formatDuration(runtime.duration, {
                 hrs: timeDict.units.hour.shortPlural,
                 mins: timeDict.units.minute.shortPlural
               })}

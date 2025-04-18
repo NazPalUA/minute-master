@@ -1,11 +1,11 @@
-export type Duration = {
+export type TimeParts = {
   totalElapsedMs: number
   hours: number
   minutes: number
   seconds: number
 }
 
-export const formatDuration = (milliseconds: number): Duration => {
+export const millisecondsToTimeParts = (milliseconds: number): TimeParts => {
   const totalSeconds = Math.floor(milliseconds / 1000)
   const hours = Math.floor(totalSeconds / 3600)
   const minutes = Math.floor((totalSeconds % 3600) / 60)

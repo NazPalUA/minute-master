@@ -1,12 +1,12 @@
 'use client'
 
-import { type Duration, formatDuration } from '@/lib/utils'
+import { type TimeParts, millisecondsToTimeParts } from '@/lib/utils'
 import { useEffect, useRef, useState } from 'react'
 
 type UseTimerUI = {
   isRunning: boolean
-  sessionDuration: Duration
-  totalDuration: Duration
+  sessionDuration: TimeParts
+  totalDuration: TimeParts
   startTimer: (newBaseElapsedMs?: number, newStartTime?: Date) => void
   stopTimer: () => void
 }
@@ -56,8 +56,10 @@ export const useTimerUI = (
     }
   }, [startDate])
 
-  const sessionDuration = formatDuration(currentSessionMs)
-  const totalDuration = formatDuration(baseElapsedMs + currentSessionMs)
+  const sessionDuration = millisecondsToTimeParts(currentSessionMs)
+  const totalDuration = millisecondsToTimeParts(
+    baseElapsedMs + currentSessionMs
+  )
 
   /**
    * Start the timer

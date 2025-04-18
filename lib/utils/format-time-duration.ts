@@ -1,18 +1,20 @@
-export function formatTimeDuration(
+import { formatTimeUnit } from './format-time-unit'
+import { millisecondsToTimeParts } from './time'
+
+export function formatDuration(
   ms: number,
   dict: { hrs: string; mins: string }
 ) {
-  const hours = Math.floor(ms / 3600000)
-  const minutes = Math.floor((ms % 3600000) / 60000)
+  const { hours, minutes } = millisecondsToTimeParts(ms)
 
   const parts = []
 
   if (hours > 0) {
-    parts.push(`${hours}${dict.hrs}`.padStart(hours < 10 ? 3 : 2, ' '))
+    parts.push(formatTimeUnit(hours, dict.hrs))
   }
 
   if (minutes > 0 || hours === 0) {
-    parts.push(`${minutes}${dict.mins}`.padStart(minutes < 10 ? 4 : 3, ' '))
+    parts.push(formatTimeUnit(minutes, dict.mins))
   }
 
   return parts.join(' ').replace(/ /g, '\u00A0') // &nbsp; for consistent spacing

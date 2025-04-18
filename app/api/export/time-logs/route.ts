@@ -1,4 +1,4 @@
-import { asyncTryCatch, formatDuration } from '@/lib/utils'
+import { asyncTryCatch, millisecondsToTimeParts } from '@/lib/utils'
 import { getTimeLogs } from '@/server/data/get-time-logs'
 import { NextRequest, NextResponse } from 'next/server'
 
@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
     )
 
   const returnData = timeLogs.data.map(item => {
-    const { hours, minutes, seconds } = formatDuration(item.duration)
+    const { hours, minutes, seconds } = millisecondsToTimeParts(item.duration)
 
     return {
       startTime: item.start,

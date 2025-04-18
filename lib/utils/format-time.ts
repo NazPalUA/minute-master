@@ -1,5 +1,5 @@
 import { Dictionary } from '@/localization'
-import { formatDuration } from './format-duration'
+import { millisecondsToTimeParts } from './milliseconds-to-time-parts'
 
 export function formatTimeToHoursAndMinutes(
   timeInMs: number,
@@ -7,7 +7,7 @@ export function formatTimeToHoursAndMinutes(
   labelStyle: 'short' | 'long' | 'full' = 'short',
   showSpace = false
 ) {
-  const { hours, minutes } = formatDuration(timeInMs)
+  const { hours, minutes } = millisecondsToTimeParts(timeInMs)
 
   const labelMap = {
     short: { hours: dict.hour.symbol, minutes: dict.minute.symbol },
