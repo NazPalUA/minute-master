@@ -55,7 +55,7 @@ export function formatTooltipValue(
   dict: Dictionary['time']['units']
 ) {
   if (typeof duration !== 'number') return duration.toLocaleString()
-  return formatTimeToHoursAndMinutes(duration, dict, 'long', true)
+  return formatTimeToHoursAndMinutes(duration, dict, 'long', ' ')
 }
 
 export const formatTimeRangeLabel = ({

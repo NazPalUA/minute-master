@@ -5,7 +5,7 @@ export function formatTimeToHoursAndMinutes(
   timeInMs: number,
   dict: Dictionary['time']['units'],
   labelStyle: 'short' | 'long' | 'full' = 'short',
-  showSpace = false
+  space = ''
 ) {
   const { hours, minutes } = millisecondsToTimeParts(timeInMs)
 
@@ -16,7 +16,6 @@ export function formatTimeToHoursAndMinutes(
   }
 
   const labels = labelMap[labelStyle]
-  const space = showSpace ? ' ' : ''
 
   return `${hours}${space}${labels.hours} ${minutes}${space}${labels.minutes}`
 }

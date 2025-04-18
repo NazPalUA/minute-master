@@ -51,5 +51,5 @@ export function formatTooltipValue(
   dict: Dictionary['time']['units']
 ) {
   if (typeof duration !== 'number') return duration
-  return formatTimeToHoursAndMinutes(duration, dict, 'long', true)
+  return formatTimeToHoursAndMinutes(duration, dict, 'long', ' ')
 }
